@@ -1,0 +1,1671 @@
+html {
+    width:100vw;
+    height:auto;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x:hidden;
+    scroll-behavior: smooth; /* This ensures that the page scrolling is smooth when the nav bar is clicked */
+    z-index:-1;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    position:absolute;
+    top:0vh;
+    margin:0;
+    width:100vw;
+    height:auto;
+    padding-bottom:5vh; 
+    background-color:black;               
+    font-weight:300;
+    letter-spacing:.2vw;
+    opacity:1;
+    /* "opacity" and "transition" are what affect the "fade-in" */ 
+    transition: opacity 3s; 
+    /*Brings 3 second "fade-in", you can change */ 
+    z-index:-1;
+}
+
+  /*  Navbar STARTS HERE */ 
+
+/* Keyframes for Navbar Animations */
+/*Animation effect slides NAVBAR in from the left-side of screen on-page-load*/
+@keyframes moveNav {/*Name of the animation goes here ("movNav")*/
+    from {left: -100vw;}/* "from" means "start here"*/
+    to {left: 0vw;}/*("to" means "ends here" => can also use 100%)*/
+}
+   
+/*Animation effect drops NAVBAR TEXT in from top of screen on-page-load*/
+@keyframes movenavText { /* Name : movenavText */
+    from {top: -100vh;}/*Animation starts at this location on the page
+                          (top:-100vh; is out of sight above the top of page*/
+    to {top: 0vh;} /*Animation ends here (top:0vh; is at the very top of page*/
+}                    /* (back in sight again)*/
+
+
+
+#Navbar.navbar_wrap {
+    position:fixed;/*keeps navbar "fixed" to screen as we scroll*/
+    top:0;/*This ensures no space is displayed above the navbar*/
+    left:0;
+    width:98.7vw;/*Makes the navbar span the entire width of screen*/
+    margin:0;
+    overflow:hidden;/*Ensures content overflow is not displayed*/
+    background-color:rgb(0, 0, 0);/*This colors the navbar black*/
+    border:5px solid rgb(143, 115, 220);
+    /*(border thickness|line type(solid,dashed,etc.)|border color)*/
+    z-index:1;/*Ensures navbar sits on top layer of webpage*/
+    -moz-webkit-animation:moveNav 5s;/* Safari 4.0 - 8.0 */
+    animation:moveNav 4s;/*Animation name |set duration(seconds)*/
+}
+
+/* Navbar Text */
+.navbar_wrap a {
+    position:relative;/*Positioned in relation to its parent container */
+    display:block; /*Ensures text will display on the same row (instead of a new             line for each item - keeps them together as a group) */
+    float:left; /*Specifies that text floats left (lays-out --> )*/
+    padding:.75vw 1vw;/*Adds cushion around text(inside the element)*/
+    text-align:center;/*Centers text within the container*/
+    text-decoration: none;/*Removes standard anchor tag underlines*/
+    color:coral;/*font color*/
+    text-shadow:.75px .75px .75px white, /*Shawdow effect for text*/
+                1px 1px 1px cornflowerblue,
+                1.25px 1.25px 1.25px peachpuff;
+    font-family:"Josefin Sans", sans-serif;
+    font-size: 1rem;
+    font-weight:400;/* "bold-ness" scale:100-900 */
+    -mov-webkit-animation:movenavText 9.75s;/* Safari 4.0 - 8.0 */
+    animation:movenavText 9.75s;
+}
+
+@keyframes navTextOnHover {
+    from{top:0vh;}
+    to{top:1vh;}
+}
+ 
+ 
+/* Navbar hover effect */
+.navbar_wrap a:hover {
+    cursor: pointer;
+    background-color:black; /*  This defines the background color that will display when you hover over the text on the navbar */
+    color:fuchsia;
+    text-shadow:.25px .25px .25px coral,
+                .5px .5px .5px coral,
+                .75px .75px .75px coral,
+                1px 1px 1px fuchsia,
+                1.25px 1.25px 1.25px fuchsia,
+                1.5px 1.5px 1.5px cornflowerblue,
+                1.75px 1.75px 1.75px cornflowerblue,
+                2px 2px 2px cornflowerblue,
+                2.25px 2.25px 2.25px cornflowerblue;/* makes the text on the navbar bold when hovered over */
+   
+    -mov-webkit-animation: navTextOnHover .45s;
+    animation: navTextOnHover .45s;
+}
+ 
+ .navbar_wrap a.active:hover{
+    color:coral;
+    text-shadow:.75px .75px .75px fuchsia,
+                 1px 1px 1px fuchsia,
+                 1.25px 1.25px 1.25px fuchsia,
+                 1.5px 1.5px 1.5px cornflowerblue,
+                 1.75px 1.75px 1.75px cornflowerblue,
+                 2px 2px 2px cornflowerblue,
+                 2.25px 2.25px 2.25px cornflowerblue,
+                 2.5px 2.5px 2.5px cornflowerblue;
+    transform:scaleZ(1.1);
+    transition:ease-in 3s;
+}  
+
+/* Navbar home button */
+.navbar_wrap a.active { /* The active selector styles a link */
+    background-color:black;  /* This specifies the background color behind the Home button on the navbar */
+    color:cornflowerblue;
+    text-shadow:1.5px 1.5px 1px white;
+    font-weight:bold;
+}
+   
+
+/* This causes the video to zoom out from a zoomed in position upon page load */
+@keyframes zoominoutsinglefeatured {
+    0% {
+        transform: scale(3,1.5);
+    }
+    100% {
+        transform: scale(1,1.5);
+    }
+}
+
+
+div#ContactButton.button.cancel {
+    position:relative;
+    bottom:0;
+    right:0;
+}
+
+audio {
+    display:none;
+}
+
+
+div#Home {
+    position:relative;
+    top:8vh;
+    left:0vw;
+    width: 100vw;
+    height:100vh;
+    overflow:hidden;
+    /* background-color:rgb(0,0,0); */
+    z-index:-1;
+}
+
+div.Poem_Add-On {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100vw;
+    height:auto;
+}
+
+
+/* Video */
+div#Home-Background-Video_Container{
+    position:relative;
+    top:-6vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    background-color:black;
+    z-index:-1;
+}
+
+video#Golden-Moon_Video {
+    position: fixed; /* This fixes our video to the page  */
+    top:2vh;/* This ensures no space between the edge of the video and the edge of the page */
+    left:15vw;    
+    width:70vw;
+    height:70vh;
+    margin:0 auto;
+    opacity:1;
+    z-index:-1;
+}
+
+
+@keyframes moveVideoText_Intro-Text_1 { /* name of animation (movevideoText)..this actually  moves the overlay text on the video */
+    from {top:225vh;} /* again we are moving from below the screen - up towards the top */
+    to {top:15vh;}
+}
+
+div.Home_Text_Container {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    margin:0 auto;
+    padding:5%;
+
+}
+
+
+.Home-Video-Text_Wrap_1 {
+    position:relative;
+    top:15vh;
+    left:0vw;
+    background-color: rgba(0,0,0, .45);
+   
+    transform: color .9s ease;
+    -moz-webkit-animation: moveVideoText_Intro-Text_1 12s ;
+    animation: moveVideoText_Intro-Text_1 12s ;
+   
+} 
+ 
+h1#Intro-Text_1{
+    position:relative;
+    top:0;
+    left:0;
+    color: slateblue;
+    text-shadow:1px 1px cornflowerblue,
+                1.10px 1.10px 1.10px  cyan,
+                1.20px 1.20px 1.20px cyan,
+                1.30px 1.30px 1.30px limegreen,
+                1.45px 1.45px 1.45px white,
+                1.55px 1.55px 1.55px white, 
+                1.65px 1.65px 1.65px white,
+                1.75px 1.75px 1.75px white, 
+                1.85px 1.85px 1.85px white,
+                1.95px 1.95px 1.95px white;
+    font-family:"Josefin Sans";
+    text-align:center;
+    font-size:5.5rem;
+    font-weight:300;
+    transition: transform ease-in-out 2s .25s;
+   
+}   
+
+#Intro-Text_1 span {
+  font-variant:small-caps;
+}
+
+h1#Intro-Text_1:hover { 
+    color:rgb(250, 104, 250);
+    text-shadow:1px 1px 1px fuchsia,
+                1.15px 1.15px 1.15px cyan,
+                1.25px 1px 1px cyan,
+                1.5px 1.5px 1.5px cyan,
+                1.75px 1.75px 1.75px slateblue,
+                2.0px 2.0px 2.0px slateblue,
+                2.15px 2.15px 2.15px black, 
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px white,S
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.25px 3.25px 3.25px white; 
+     transform: scale(1.25);
+    
+} 
+
+
+@keyframes moveVideoTextFromRight_MyNameIs-Text_2 {
+    from {left:300vw;}
+    to {left:47.25vw;}
+}
+
+
+
+
+
+.Home-Video-Text_Wrap_2 {
+    position:relative;
+    top:26vh;
+    left:47.25vw;
+    -moz-webkit-animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
+    animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
+}
+
+h4#MyNameIs-Text_2 {
+    position:relative;
+    top:0;
+    left:0vw;
+    color:peachpuff;
+    text-shadow:1px 1px 1px orangered,
+                1.15px 1.15px 1.15px coral,
+                1.25px 1px 1.25px rgb(252, 89, 225),
+                1.5px 1.5px 1.5px rgb(252, 89, 225),
+                1.75px 1.75px 1.75px black,
+                2.0px 2.0px 2.0px black,
+                2.15px 2.15px 2.15px white, 
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px white,
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white;
+    font-family:"Stalemate", cursive;
+    font-size:1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    letter-spacing: .4rem;
+}
+
+@keyframes moveVideoTextFromLeft_Name-Text_3 {
+    from {left:-255vw;}
+    to {left:30vw;} 
+}
+
+
+
+div.Home-Video-Text_Wrap_3 {
+    position:relative;
+    top:26vh;
+    left:30vw;
+    background-color: rgba(0,0,0, .45);
+    -moz-webkit-animation: moveVideoTextFromLeft_Name-Text_3 12s;
+    animation: moveVideoTextFromLeft_Name-Text_3 12s; 
+}
+
+h2#Name-Text_3 {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    color:fuchsia;
+    text-shadow:1.05px 1.05px 1.05px cornflowerblue,
+                1.10px 1.10px 1.10px slateblue,
+                1.15px 1.15px 1.15px cyan,
+                1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px black,
+                1.57px 1.75px 1.75px black,
+                2px 2px 2px black,
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px coral,
+                2.6px 2.6px 2.6px peachpuff,
+                2.7px 2.7px 2.7px peachpuff,
+                2.85px 2.85px 2.85px white,
+                2.95px 2.95px 2.95px white,
+                3.15px 3.15px 3.15px white,
+                3.3px 3.3px 3.3px white;
+    font-family:"Josefin Sans", sans-serif; 
+    font-size:2.55rem;
+    font-weight:400; 
+    letter-spacing: .3rem;  
+   
+}
+
+@keyframes moveVideoText_IAmDev-Text_4 {
+    from {top:-135vh;}
+    to {top:27vh;}
+}
+
+div.Home-Video-Text_Wrap_4 {
+    position:relative;
+    top:27vh;
+    left:29vw;
+    margin:0 auto;
+    background-color: rgba(0,0,0, .45);
+    -moz-webkit-animation: moveVideoText_IAmDev-Text_4 12s;
+    animation: moveVideoText_IAmDev-Text_4 12s;
+}
+
+h4#IAmDev-Text_4  {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    color:peachpuff;
+    text-shadow:1px 1px 1px orangered,
+                1.15px 1.15px 1.15px coral,
+                1.25px 1px 1px fuchsia,
+                1.5px 1.5px 1.5px slateblue,
+                1.75px 1.75px 1.75px slateblue,
+                2.0px 2.0px 2.0px white,
+                2.15px 2.15px 2.15px white, 
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px white;
+    font-family:"Stalemate", cursive;
+    font-size:1.5rem;
+    font-weight:600;
+    line-height: 1.75rem;
+    letter-spacing:.3rem;       
+}
+
+span#Dev {  
+    color:cyan;
+    text-shadow:1px 1px 1px slateblue,
+                1.10px 1.10px 1.10px fuchsia,
+                1.20px 1.20px 1.20px white,
+                1.30px 1.30px 1.30px slateblue,
+                1.45px 1.45px 1.45px slateblue,
+                1.55px 1.55px 1.55px black,
+                1.65px 1.65px 1.65px black,
+                1.75px 1.75px 1.75px coral, 
+                1.85px 1.85px 1.85px white ,
+                1.95px 1.95px 1.95px white,
+                2.05px 2.05px 2.05px white,
+                2.15px 2.15px 2.15px white,
+                2.25px 2.25px 2.25px white,
+                2.35px 2.35px 2.35px white,
+                2.5px 2.5px 2.5px white;
+                /* 2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white,
+                4px 4px 4px white; */
+    font-family:"Josefin Sans", sans-serif;
+    font-size:1.5rem;
+    font-weight:300; 
+    line-height: 1.95rem;       
+}
+
+
+
+div.Poem p {
+	position:relative;
+    top:90vh;
+    left:0vw;
+}
+
+/*SlideShow Style*/
+
+div.Row { 
+    position:relative;
+    display:flex;
+    top:0vh;
+    left:0vw;
+    width:100vw;
+    height:100vh;
+}
+
+div#Slideshow_Container  {
+    position:relative;
+    display:flex;
+    top:-5vh; 
+    left:0vw;
+    width:100vw;
+    height:100vh;
+    padding:0 25% 0 25%;
+    background-color:rgba(0,0,0,.15);
+}
+
+.Carousel{
+    position:absolute;
+    display:flex;
+    top:-5vh;
+    left:0vh;
+    width:100%;
+    height:auto;
+    margin:auto;
+    padding:10%;
+}
+
+
+
+.PreviousButton{
+    position:absolute;
+    top:47vh;
+    left:23vw;
+    user-select:none;
+    transition: 0.6s ease; 
+    font-size:3rem;
+    color:cornflowerblue;
+    cursor:pointer;
+    width:5vw;
+    background-color:rgba(0,0,0,.50);
+    border:none;
+}
+
+.NextButton{
+    position:absolute;
+    float:right;
+    top:47vh;
+    left:72vw;;
+    user-select:none;
+    transition: 0.6s ease; 
+    font-size:3rem;
+    color:cornflowerblue;
+    cursor:pointer;
+    width:5vw;
+    background-color:rgba(0,0,0,.50);
+    border:none;
+}
+
+div.mySlides fade{
+    position:relative;
+    display: none;
+    top:0vh;
+    left:0vw;
+    width:50vw;
+    height:70vh;
+    /* margin:0 auto; */
+    /* padding:2%; */
+    overflow:hidden;
+}
+  
+@-webkit-keyframes fade {
+    from {opacity: .2;} 
+    to {opacity: .80;}
+}
+  
+@keyframes fade {
+    from {opacity: .2;} 
+    to {opacity: .80;}
+}
+
+/* Fading animation for slideshow */
+div.fade { 
+    -moz-webkit-animation: fade 2s;
+    animation: fade 2s;  
+}
+
+
+.Slideshow_Image {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:45vw;
+    height:55vh;
+    margin:0 auto;
+}
+
+img.Slideshow_Image {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100%;
+    height:100%;
+    margin:0 auto;
+    object-fit: cover;
+    opacity: 85%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+div.Slideshow_Image video {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    object-fit:fill;
+    opacity: 95%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+
+
+ #mePic_slide-1{
+    margin:0 auto;
+    width:80%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px; 
+}
+
+#htmlPic_slide-2 {
+    margin:0 auto;
+    width:80%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+#cSharpPic_slide-3 {
+    margin:0 auto;
+    width:80%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+#sqlPic_slide-4 {
+   
+    margin:0 auto;
+    width:80%;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+#typingVid_slide-5 {
+    position:relative;
+    top:0vh;
+    left:3.5vw;
+    margin:0 auto;
+    width:80%;
+    height:70vh;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+    object-fit:fill;
+} 
+
+#Typing_Text {
+    position:relative;
+    top:2vh;
+    left:0vw;
+}
+
+.FixPic {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:50vw;
+    height:70vh;
+    margin:0 auto;
+
+}
+
+#rotaryPic_slide-6 {
+    position: absolute;
+    top:0vh;
+    left:4vw;
+    width:80%;
+    height:70vh;
+    filter:none;
+    object-fit:fill;
+    background-color:orchid;
+    border:8px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+
+}
+  
+/* Slideshow text */
+div.Slide_Text {
+        position:relative;
+        top:3vh;
+        left:0vw;
+        font-size:1rem;
+        background-color:rgba(0, 0, 0, .50); 
+        width: 100%;
+        margin:0 auto;
+        padding: 2%;
+        text-align:center;
+        color: white;
+        background-color: rgba(0,0,0,.6);
+        font-family:"Josefin Sans", sans-serif;
+        line-height: 1.5rem; 
+        letter-spacing: .06vw; 
+        font-weight: 400;
+        border-radius: 7px;
+}
+
+div#Rotary_Text {
+    position:relative;
+    top:72vh;
+    left:0vh;
+    margin:0 auto;
+    text-align:center;
+}
+
+
+
+#dotBox {
+    position:absolute;
+    display:block;
+    top:103vh;
+    left:44vw;
+    margin:0 auto;
+}
+
+/* The dots under the slideshow */
+.dot {
+    position: relative;
+    display: inline-block;
+    bottom:0;
+    cursor: pointer;
+    width: 1vw;
+    height: 1vw;
+    margin: .25vw;
+    background-color: white;
+    border-radius: 50%;
+    transition: background-color 0.6s ease;
+    z-index:1;
+    user-select:none;
+}
+  
+/* Hover effect for slideshow dots */ 
+.active, .dot:hover {
+    background-color: fuchsia;
+}
+  
+*  { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+}   /* Table - this section covers the styling of the columns and rows within our table */
+  
+.Row:after{
+    content:"";
+    display:table;
+    clear:both;
+}
+ 
+.Column_2 {
+    position:relative;
+    top:0vh;
+    height:auto;
+    color:white;
+    background-color:rgba(218, 213, 206, 0.64); 
+    border:5px solid black;  
+}
+
+.Column_1 {
+    position:relative;
+    top:0vh;
+    width:45%;
+    height:auto;
+    background-color:rgba(62, 49, 71, 0.55); 
+    border:5px solid black;
+} 
+
+.Column {
+    position:relative;
+    top:0vh;
+    width:49.5%;
+    height:auto;
+    float:left;
+    flex:1;
+}
+
+.Column-Cushion {
+    position:relative;
+    padding:5%;
+}
+
+#About{
+    position:relative;
+    top:0vh;
+    width:100vw;
+    height:auto;
+    padding:2vw;
+    margin:0;
+    color:white;
+    background-color:rgba(104,103,103,0.75);
+    
+}
+
+#About_Disclaimer {
+    position: relative;
+    top:0vh;
+    margin:0;
+    padding-left:2vw;
+    padding-right:3vw;
+    padding-bottom:2vh;
+    text-align:justify;
+    font-family:"Josefin Sans", sans-serif;
+    font-size: .75rem;
+    font-weight:200;
+}
+
+h5#PSA {
+    text-align:center;
+    margin:0;
+    padding-bottom:5vh;
+    margin-bottom:1%;
+}
+
+#FilterText {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100%;
+    filter: grayscale(100%);
+    padding:1%;
+}
+
+#About_Column_2 {
+    position:relative;
+    top:0vh;
+    height:auto;
+    color:white;
+    background-color:rgba(218, 213, 206, 0.64); 
+    border:5px solid black; 
+    filter:grayscale(85%);
+}
+
+#About_Row {
+    border:5px solid black;
+}
+
+#About_Column_1 {
+    position:relative;
+    top:0vh;
+    height:autovh;
+    background-color:rgba(62, 49, 71, 0.55); 
+    border:5px solid black;
+} 
+
+#About_Header{
+    position:relative;
+    top: 0vh;
+    margin:0vw;
+    text-align:center;
+    color:white;
+    text-shadow:1.25px 1.25px 1.25px white,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px black,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black;
+    font-family:"Stalemate", cursive;
+    font-size:4rem;
+    font-weight:300;
+}
+
+#TheGist_Header {
+    position:relative;
+    top:-2vh;
+    margin:0;
+    text-align:center;
+    color:white;
+    text-shadow:1.25px 1.25px 1.25px white,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px black,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black,
+                3px 3px 3px black,
+                3.25px 3.25px 3.25px black,
+                3.5px 3.5px 3.5px black,
+                3.75px 3.75px 3.75px black,
+                4px 4px 4px black,
+                4.25px 4.25px 4.25px black;
+    font-family:"Stalemate", cursive;
+    font-size:3.5rem;
+    font-weight:300;
+  }
+
+#TheGoods_Text {
+    position:relative;
+    top: -3vh;
+    padding:10px;
+    text-align:justify;
+    color:White;
+    text-shadow:1.25px 1.25px 1.25px white,
+                1.5px 1.5px 1.5px black,
+                2.25px 2.25px 2.25px black,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black,
+                3px 3px 3px black;
+    line-height:1.75rem;
+    font-size:1.15rem;          
+}
+
+
+#CriticalThinking {
+    color :magenta;
+    text-shadow:1.25px 1.25px 1.25px white,
+                1.5px 1.5px 1.5px slateblue,
+                1.75px 1.75px 1.75px cyan,
+                2.25px 2.25px 2.25px turquoise,
+                2.5px 2.5px 2.5px slateblue,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px black,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white;
+    font-size: 2.65rem;
+    letter-spacing: .2rem;
+    line-height:2.71rem ;
+}
+
+#Skill, #ArtForm{
+    color:rgb(218, 71, 186);
+    text-shadow:1.25px 1.25px 1.25px darkblue,
+                1.5px 1.5px 1.5px darkblue,
+                1.57px 1.75px 1.75px darkblue  ,
+                2px 2px 2px cyan,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.15px 3.15px 3.15px black,
+                3.25px 3.25px 3.25px black,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white,
+                4px 4px 4px  white;
+    font-size: 1.75rem;
+    line-height: 2em;
+}
+
+#CodeIs{
+    color:white;
+    text-shadow:1.25px 1.25px 1.25px darkturquoise,
+    1.15px 1.15px 1.15px fuchsia,
+    1.5px 1.5px 1.5px fuchsia,
+    2.25px 2.25px 2.25px fuchsia,
+    2.5px 2.5px 2.5px cyan,
+    2.75px 2.75px 2.75px cyan,
+    3px 3px 3px white,
+    3.25px 3.25px 3.25px yellow,
+    3.5px 3.5px 3.5px yellow;
+
+    font-size:2.67rem;
+    line-height:2.75rem;
+}
+
+#Fixing {
+    color:pink;
+    text-shadow:1.15px 1.15px 1.15px slateblue,
+    1.25px 1.25px 1.25px darkturquoise,
+    1.15px 1.15px 1.15px fuchsia,
+    1.5px 1.5px 1.5px fuchsia,
+    2.25px 2.25px 2.25px fuchsia,
+    2.5px 2.5px 2.5px cyan,
+    2.75px 2.75px 2.75px cyan,
+    3px 3px 3px slateblue,
+    3.25px 3.25px 3.25px yellow,
+    3.5px 3.5px 3.5px yellow;
+
+    font-size:1.67rem;
+    line-height:1.75rem;
+}
+
+#Shakespeare {
+    position:relative;
+    top:0vh;
+    left:13vw;
+    color:White;
+    text-shadow:1.25px 1.25px 1.25px white,
+                1.5px 1.5px 1.5px black,
+                2.25px 2.25px 2.25px black,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black,
+                3px 3px 3px black;
+    line-height:1.25rem;
+    font-size:1.15rem;       
+
+}
+
+#Polished,#Masterpiece, #Doodle{
+    position:relative;
+    text-align:center;
+    color:cyan;
+    text-shadow:1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px fuchsia,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black,
+                3px 3px 3px black,
+                3.15px 3.15px 3.15px black,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white;
+    font-size: 1.25rem;
+    font-weight:600;
+    line-height:1.5rem;
+}
+
+#Foundation {
+    color:lime;
+    text-shadow:1.25px 1.25px 1.25px lime,
+                  1.5px 1.5px 1.5px cornflowerblue,
+                  2.25px 2.25px 2.25px cornflowerblue,
+                  2.5px 2.5px 2.5px black,
+                  2.75px 2.75px 2.75px fuchsia,
+                  3px 3px 3px fuchsia,
+                  3.15px 3.15px 3.15px white,
+                  3.25px 3.25px 3.25px white,
+                  3.5px 3.5px 3.5px white,
+                  3.75px 3.75px 3.75px white;
+   font-size:2rem; 
+}
+
+#Adventures, #Discoveries, #Trials, #Obstacles {
+    color:blueviolet;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px cyan,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px orchid,
+                3px 3px 3px orchid,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white;
+    font-size:1.5rem;
+    line-height:2rem;
+}
+
+#Hunt {
+    color: magenta;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px slateblue,
+                2px 2px 2px slateblue,
+                2.25px 2.25px 2.25px slateblue,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white;
+    font-size:2rem;
+    line-height: 3rem;  
+}
+
+#Twists {
+    text-align:center;
+    color:yellow;
+    text-shadow:1.25px 1.25px 1.25px cornflowerblue,
+                1.5px 1.5px 1.5px cornflowerblue,
+                2.25px 2.25px 2.25px cornflowerblue,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px black,
+                3.5px 3.5px 3.5px black,
+                3.75px 3.75px 3.75px black;
+    font-size: 2.3rem;
+    line-height:2.37rem;
+}
+
+#Welcome {
+    text-align:center;
+    color:darkslateblue;
+    text-shadow:1.15px 1.15px 1.15px slateblue,
+                1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px yellow,
+                3px 3px 3px yellow,
+                3.15px 3.15px 3.15px yellow,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px yellow,
+                3.75px 3.75px 3.75px yellow;
+    font-size: 2.53rem;
+    line-height:2.37rem;
+}
+
+#Interruption {
+    color:black;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px black,
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px slateblue,
+                3px 3px 3px slateblue,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px cyan,
+                3.75px 3.75px 3.75px cyan,
+                4px 4px 4px black,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white;
+    font-size:1.15rem;
+}
+ 
+#InTheLandOf {
+    color:lime;
+    text-shadow:1.25px 1.25px 1.25px cornflowerblue,
+                1.5px 1.5px 1.5px cornflowerblue,
+                2.25px 2.25px 2.25px cornflowerblue,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px black,
+                3.5px 3.5px 3.5px black,
+                3.75px 3.75px 3.75px black;
+    font-size:1.75rem;
+    line-height:1.95rem;
+}
+ 
+#FullStack {
+    color:darkslateblue;
+    text-shadow:1.15px 1.15px 1.15px slateblue,
+                1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px yellow,
+                3px 3px 3px yellow,
+                3.15px 3.15px 3.15px yellow,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px yellow,
+                3.75px 3.75px 3.75px yellow;
+    font-size: 2.53rem;
+    line-height:2.95rem;
+}
+
+#TechAcademy a{
+    color:orangered;
+    text-shadow:1.25px 1.25px 1.25px fuchsia,
+                1.5px 1.5px 1.5px fuchsia,
+                2px 2px 2px orangered,
+                2.25px 2.25px 2.25px black,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px white,
+                3.75px 3.75px 3.75px white;
+    font-size: 1.85rem;
+    font-weight:400;
+    line-height:1.95rem;
+    letter-spacing: .1rem;
+}
+
+#Tools {
+    color:peachpuff;
+    text-shadow:1px 1px 1px orangered,
+                1.15px 1.15px 1.15px coral,
+                1.25px 1px 1.25px rgb(252, 89, 225),
+                1.5px 1.5px 1.5px rgb(252, 89, 225),
+                1.75px 1.75px 1.75px black,
+                2.0px 2.0px 2.0px black,
+                2.15px 2.15px 2.15px white, 
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px white,
+                2.75px 2.75px 2.75px white,
+                3px 3px 3px white,
+                3.15px 3.15px 3.15px yellow,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px yellow,
+                3.75px 3.75px 3.75px yellow;
+    font-size:1.5rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+}
+
+
+/* Right side of the About Row - About_Column_1 */
+ #Earth_Lightbulb_Container{
+    position:relative;
+    top:7vh;
+    left:0vw;
+    margin:0 auto;
+    padding:2%;
+    height:auto;
+    filter:grayscale(85%);
+    border:10px rgb(247, 224, 205) dotted;
+ }
+
+#Earth_Lightbulb_Pic img {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    margin:0 auto;
+}
+
+ .Pic_Text_Wrap {
+     position:relative;
+     top:0vh;
+     left:0vw;
+     height:auto;
+     margin:0 auto;
+    
+} 
+
+ #Earth_Lightbulb_Text{
+    position:relative;
+    top:0vh;
+    left:0vw;
+    color:rgb(247, 224, 205);
+    padding:1%;
+    margin:0 auto;
+    text-align:center;
+}
+
+#Earth_Lightbulb_Container img:hover {
+    filter:grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition:transform ease-in-out 3s;
+    transform:scale(1.15); 
+}
+
+/*LinkedIn Stuff */
+
+#Social_2{
+    position:relative;
+    top:70vh;
+}
+
+#Social_1, #Social_2 {
+    text-align:center;
+}
+
+#LinkedIn_Link {
+    text-align:center;
+}
+
+#LinkedIn_Link a {
+    text-align:center;
+    color:rgb(220, 96, 231);
+    text-shadow:1.5px 1.5px 1.5px #4d4d4d; 
+    font-size:1.5em;
+}
+
+#LinkedIn_Pic {
+    position:relative;
+    top:10vh;
+    left:6vw;
+}
+
+
+#AboutFaucetAlbert {
+    position:relative;
+    top: 7vh;
+    left:10vw;
+    width:60%;
+    filter: grayscale(75%);
+    background-color:rgb(155, 134, 150);
+    border:7px rgb(247, 224, 205) dotted;
+    border-radius: 8px;
+}
+
+#FaucetHead {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    padding:45px;
+}
+
+#FaucetText{
+    position:relative;
+    top:-5vh;
+    text-align:center;
+    font-size:1rem;
+}
+
+#AboutFaucetAlbert:hover{
+    filter: grayscale(0%);
+    background-color:rgb(141, 169, 219);
+    transition:transform 2s;
+    transform:scale(1.01) ;
+}
+
+#Lets_Talk {
+    position:relative;
+    top:25vh;
+    margin-top:0;
+    margin-bottom:.25%;
+    text-align:center;
+    color:black;
+    font-size:1rem;
+}
+
+#Click_Me {
+    position:relative;
+    top: 20vh;
+    text-align:center;
+    font-size:1rem;
+}
+
+
+
+#video-container2 {
+    position:relative;
+    top:90vh;
+    left:1vw;
+    width:80%;  
+    margin:0 auto;
+    object-fit:fill;
+    border:7px dotted rgb(247, 225, 209);
+    border-radius:8pt;
+    z-index:1;
+}
+
+#video-text_2 {
+    position:relative;
+    top:75vh;
+    left: 0vw;  
+}
+
+#Idea {
+    position:relative;
+    top:0vh;
+    width:100%;
+    height:100%;
+    margin:0 auto;
+    padding:0px;
+    filter:grayscale(85%);
+    background-color:black;
+    z-index:1;
+}
+
+#Click_Me {
+    position:relative;
+    top:-22vh;
+    text-align:center;
+    color:rgb(96, 140, 243);
+    font-family:"Josefin Sans";
+    font-size:1.15em;
+    font-weight:600;
+    z-index:1;
+}
+
+#Click_Me a {
+    color:rgb(248, 69, 248);
+    text-shadow: 1.15px 1.15px  1.15px cyan;
+    font-family:"Josefin Sans";
+    font-size:1.75rem;
+    font-weight:bold;
+}
+
+#Lets_Talk{
+    position:relative;
+    width:100%;
+    top:-27vh;
+    text-align:center;
+    color:rgb(235, 57, 235);
+    font-family:"Abril Fatface";
+    font-size:3.5em;
+    z-index:1;
+}
+
+#Social_1{
+    position:relative;
+    top:35vh;
+}
+
+
+
+#GitHub_Link {
+    text-align:center;
+}
+
+#GitHub_Link a{
+    text-align:center;
+    color:rgb(220, 96, 231);
+    font-size:1.5em;
+    text-shadow:1.5px 1.5px 1.5px #4d4d4d;
+    line-height:2em;
+}
+
+#GitHub_Pic {
+    position:relative;
+    top:11vh;
+    left:12vw;
+}
+
+
+/*Video Containers and Clips */
+video-container {
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+#video-container-3{
+    position:relative;
+    width:45%;
+    top: 0vh;
+    left:25vw;
+    margin:0 auto;
+    background-color:rgb(104, 95, 88);
+    border:10px solid rgb(104, 95, 88);
+    z-index:0;
+}
+
+#Sparkler_Clip {
+    position:relative;
+    top: 0vh;
+    width:45vw;
+    height:40vh;
+    background-color:rgb(104, 95, 88); 
+    z-index:1;
+}
+
+.video-text3 {
+   position:relative;
+   width:100%;
+   height:100%;
+   top:26vh;
+   left:-2.5vw;
+}
+
+#Coco_Quote {
+   position:relative;
+   bottom:40vh;
+   right:-3vw;
+   text-align:center;
+   color:rgb(247, 224, 205);
+   text-shadow:1.px 1.px 1.px white;
+   font-size:1.15em;
+   z-index:1;
+}
+
+.video-container4{
+    position:relative;
+    top:-4vh;
+    width:100%;
+    height:40%;
+    margin:0 auto;
+    padding:3%;
+    object-fit:fill;
+    border:10px solid blue;
+    z-index:0;
+}
+
+#Sparkler-Left_Clip {
+    position:relative;
+    bottom:0;
+    width:100%;
+    height:auto;
+    border: 15pt solid rgb(247, 224, 205);
+}
+
+.video-text4 {
+  position:relative;
+  bottom:100vh;
+  width:0vw;
+  height:auto;
+}
+  
+#Let-It-Shine_Quote q{
+   position:relative;
+   top:20vh;
+   right:-6vw;
+   text-align:center;
+   color:rgb(247, 224, 205);
+   text-shadow:1.px 1.px 1.px white;
+   font-size:1.15rem; 
+}
+
+/* FOOTER SECTION*/
+footer {
+    margin-top:2%;
+    padding: 2%;
+    background-color:rgba(199, 195, 191, 0.137);
+    color:rgb(135, 156, 197);
+   
+}
+
+#Oscar_Wilde_Quote {
+    text-align:center;
+    color:rgb(245, 188, 202);
+    text-shadow:1.15px 1.15px 1.15px white;
+    font-size:1.5em;
+}
+
+#PinkBeeMe_Logo {
+    filter:grayscale(0%);
+}
+ 
+#Done_Btn {
+    color:steelblue;
+}
+
+#Good-bye_Footer-Text {
+    position:relative;
+    bottom:0;
+    right:0;
+    width:100%;
+    height:110vh;
+}
+
+#Goodbye #ThankYou {
+    position:relative;
+    top:53vh;
+    left:46.5vw;
+    color:peachpuff;
+    text-shadow:1.10px 1.10px 1.10px white;
+}
+
+#Good-bye_Footer-Text #Until_Footer-Text {
+    position:relative;
+    top:49vh;
+    left:53vw;
+    color:peachpuff;
+    text-shadow:1.10px 1.10px 1.10px white;
+}
+
+#Good-bye_Footer-Text #Great-Day_Footer-Text {
+    position:relative;
+    top:37vh;
+    left:45vw;
+    color:orchid;
+    text-shadow:2px 2px 2px peachpuff;
+    font-size:1.77em;
+}
+
+#From_Footer-Text {
+    position:relative;
+    top:35vh;
+    left:51vw;
+    color:peachpuff;
+    text-shadow:1.25px 1.25px 1.25px peachpuff;
+    font-family:"Stalemate",cursive;
+}
+
+#CreatingTheCode_Footer-Text {
+    position:relative;
+    top:30vh;
+    left:0vw;
+    text-align:center;
+    color:rgb(97, 124, 179);
+    text-shadow:2px 4px 5px orchid;
+    font-family:"Optima";
+    font-size:5em;
+}
+
+#CreatingTheCode_Footer-Text span {
+    font-variant:all-petite-caps;
+}
+
+/* NO class/ NO id "having"  Elements */
+h2 {
+    color:black;
+    text-shadow:1.5px 1.5px 1.5px white;
+    font-family:"Stalemate",cursive;
+    font-size:2em;
+}
+
+p {
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    text-align: justify;
+    font-size: 1.25vw;
+    letter-spacing: .1vw; /* This expands the text slightly */
+}
+
+q {
+  font-style: italic;
+  font-weight: bold;
+}
+
+center {
+    padding-left: 1vw;
+    padding-right: 1vw;
+    text-align: center;
+    letter-spacing: .1vw;
+    font-size: 1.5vw;
+}
+  
+img {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    max-width:100%; 
+    height:auto;
+    display:block; /* By specifying block display we can ensure our images are able to be centered */
+    filter:grayscale(45%); /* This rids our pictures of 75% of their color */
+    border-radius:8%;
+}
+
+/* HOVERS */
+center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+   
+h1:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+ 
+h3:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+img:hover {
+    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition: transform ease-in 2s;
+    transform: scale(1.05); 
+}
+
+video:hover {
+    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition: transform ease-in 2s;
+    transform: scale(1.05); 
+}
+
+/*FORM BUTTON AND FORM*/
+  /* Makes contact form button slide in from right on page load */
+@keyframes movePopup {
+    from {right: -40vw;}
+    to {bottom: 1.75vw;}
+}
+  
+/* Button used to open the contact form - fixed at the bottom of the page */
+.Pop_Up_Button {
+    position: fixed;
+    bottom: 1.75vw;
+    right: 1.75vw;
+    width: 15vw;
+    padding:5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border: solid;
+    font-size:1.5em;
+    font-weight:900;
+    -moz-webkit-animation: movePopup 5s;
+    animation: movePopup 5s;
+}
+  
+/*The popup form - hidden by default */
+.form-popup {
+    position: fixed;
+    display: none;
+    bottom: 6px;
+    right: 6px;
+    border: 3px solid #f0f1f0;
+    z-index: 8;
+}
+  
+/* Form styling */
+.form-container {
+    max-width: 49vw;
+    padding: 9px;
+    background-color: white;
+}
+  
+ /* Input fields */
+ .form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    margin: .6vw 0 .6vw 0;
+    padding: .93vw;
+    background: Gainsboro;
+    border: none;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 1vw; 
+}
+  
+/* Submit button */
+.form-container .btn {
+    margin-bottom:1vh;
+    background-color: white;
+    color: black;
+    border-color: black;
+}
+  
+/* Close button */
+.form-container .cancel {
+    background-color: black;
+    color: white;
+    border-color: gray;
+}
+  
+/* Button styling */
+button {
+    width: 100%;
+    height: auto;
+    padding: 1.5vw 1.5vw;
+    cursor: pointer;
+    border-style: solid;
+    font-family: "Abril Fatface"; 
+    font-size: 1.5vw;
+    font-weight: bold;
+    letter-spacing: .3vw; 
+}
+  
+/* Hover effect for buttons */
+button:hover, .form-container .btn:hover{
+    background-color: black;
+    color: white;
+    border-style: solid;
+    border-color: silver;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+}
+  
+.form-container .cancel:hover{
+    background-color: steelblue;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    -webkit-transition-duration: 1s; 
+    transition-duration: 1s;
+} 
+ 
+
+
