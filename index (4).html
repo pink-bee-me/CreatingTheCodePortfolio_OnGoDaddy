@@ -21,7 +21,14 @@
 <!-- Body -->
 <body>
 
-  
+  <!-- Floating Contact Button for Form -->
+  <div id="ContactButton" >
+    <button class="button cancel Pop_Up_Button" onclick="openForm()">Contact Me
+
+    </button>
+      <!--NOTE: This allows us to close the form when we click outside the nav bar or
+      <button id="floatingContactButton" class="Pop_Up_Button"> Contact Me </button> contact form -->
+  </div><!-- Contact Button close tag--> 
   
  <!-- Navbar -->
     <div id="Navbar" class="navbar_wrap">
@@ -34,12 +41,8 @@
         <a class="btn" href="#Poem">Poem</a>
         <a class="btn" onclick="openForm()">Contact</a>
     </div><!--Navbar close tag-->
-   
- <!-- Floating Contact Button for Form -->
-    <div id="ContactButton" class="button cancel" onclick="openForm()">
-        <!--NOTE: This allows us to close the form when we click outside the nav bar or
-        <button id="floatingContactButton" class="Pop_Up_Button"> Contact Me </button> contact form -->
-    </div><!-- Contact Button close tag-->
+    <div id="Home"> 
+
     
   <!--  Audio Player Hidden  -->
      <div id="MyAudio">
@@ -50,7 +53,7 @@
     </div>
 
 <!--Home View-->
-  <div id="Home">  
+   
          
         <!--Video Text Overlay for Home/Introduction Portion of Website-->
         <!-- Sparkling Moon Backdrop visible as yuser scrolls -->
@@ -61,7 +64,7 @@
                           Your browser does not support HTML5 video.
             </video>
             
-          <div class="Home_Text_Container">
+       
                 <div class="Home-Video-Text_Wrap_1">
                     <h1 id="Intro-Text_1" >C<span>reating</span>T<span>he</span>C<span>ode.com</span></h1>
                 </div>
@@ -76,83 +79,92 @@
                  </div>
 
                  <div class="Home-Video-Text_Wrap_4">
-                      <h4 id="IAmDev-Text_4">. . .  and I'm a <span id="Dev">Software Engineer </span> . . . </h4>
+                      <h4 id="IAmDev-Text_4">. . .  and I am a <span id="Dev">Software Engineer </span> . . . </h4>
                 
                  </div>
-            </div>  
+        
             </div> 
             </div>
    
  
 </div>
-</div>
+
  <!--Home close tag-->   
    
 <!-- Slideshow Starts Here! -->
-<div  class="Row">
-    <div id="Slideshow_Container"> 
+<div id="Slideshow">
+  <div class="Row_Slideshow">
+    
         <div class="Carousel">
-      
+      <div id="Slideshow_Container"> 
       <!-- <div id="Slideshow"> -->
 
 
-        <div class="mySlides fade FixPic">
-           <img id="mePic_slide-1" class="Slideshow_Image" src="./picOfMe.jpg" alt="Image of LaurieSue Peterson" width="550" height="450">
+        <div class="mySlides fade">
+          <div id="mePic_slide-1" class="Slideshow_Image">
+           <img src="./picOfMe.jpg" alt="Image of LaurieSue Peterson">
+          </div>
            <div class="Slide_Text">What do I do?... I solve problems, fix things, and make stuff better!<br>
                      How do I do that?... I LISTEN. I ASK QUESTIONS, and then <br>I LISTEN SOME MORE.
           </div>
-        </div>
+          </div>
+      
        
-		    <div class="mySlides fade FixPic">
-          <img  id="htmlPic_slide-2" class="Slideshow_Image" src="./HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JavaScript Shield" width="550" height="450" >
+		    <div class="mySlides fade">
+          <div  id="htmlPic_slide-2"  class="Slideshow_Image">
+          <img src="./HTML_CSS_and_JavaScript.jpeg" alt="HTML, CSS, and JavaScript Shield">
+          </div>
           <div class="Slide_Text">As a full-stack developer,<br> I am trained in: HTML, CSS, JavaScript,...
           </div>
-        </div>
+          </div>
 
-        <div class="mySlides fade FixPic">
-           <img  id="cSharpPic_slide-3" class="Slideshow_Image" src="./C_Sharp_and_Dot_NET.png" alt="C-Sharp and .Net Shield" width="550" height="450">
+        <div class="mySlides fade">
+          <div id="cSharpPic_slide-3"  class="Slideshow_Image">
+           <img  src="./C_Sharp_and_Dot_NET.png" alt="C-Sharp and .Net Shield">
+          </div>
            <div class="Slide_Text">C#, .NET Framework, ASP.NET, MVC, OOP,...
            </div>
         </div>
+        
 
-        <div class="mySlides fade FixPic" >
-            <img id="sqlPic_slide-4" class="Slideshow_Image" src="./SQL_and_Database.jpg" alt="SQL and Databases Shield" width="550" height="450">
+        <div class="mySlides fade" >
+          <div id="sqlPic_slide-4" class="Slideshow_Image">
+            <img src="./SQL_and_Database.jpg" alt="SQL and Databases Shield">
+          </div>
             <div class="Slide_Text">and back-end technologies,... including SQL, MSSMS, T-SQL, Stored Procedures, and Relational Database Management.
-            </div>  
-        </div>
-
-		    <div class="mySlides fade FixPic">
-	          <video id="typingVid_slide-5" class="Slideshow_Image"  autoplay loop mute  width="550" height="450" >
-               <source src="./Typing.mp4"> Person sitting at computer typing computer code.
-            </video>
-            <div id= "Typing_Text" class="Slide_Text">Top that off with Ingenuity, Insight, Empathy, <br>a Creative Imagination,
-                             a "Can-Do" Attitude,<br> and a Sense of Humor to boot!
             </div> 
         </div>
 
-		    <div  class="mySlides fade FixPic">
-            <img id="rotaryPic_slide-6" class="Slideshow_Image" src="./ReSIZERotary_ContactMe.jpg" alt="Rotary telephones on the wall" width="550" height="450" >
+		    <div class="mySlides fade">
+          <div id="typingVid_slide-5" class="Slideshow_Image" >
+	          <video id="typing" autoplay loop muted>
+               <source src="./Typing.mp4" >Person sitting at computer typing computer code.
+            </video>
+            </div>
+            <div id= "Typing_Text" class="Slide_Text">Top that off with Ingenuity, Insight, Empathy,<br>
+                                                      a Creative Imagination, a "Can-Do" Attitude,<br>
+                                                      and a Sense of Humor to boot!
+          </div>
+        </div>
+
+		    <div  class="mySlides fade ">
+          <div id="rotaryPic_slide-6"  class="Slideshow_Image">
+            <img  src="./ReSIZERotary_ContactMe.jpg" alt="Rotary telephones on the wall">
+          </div>
            <div id="Rotary_Text" class="Slide_Text">
-              
-            Go ahead and take a leap of faith!!!<br>
-               Let's put the power of this unique blend of skills <br>and diverse life experiences to work for YOU!
-              
+               Go ahead and take a leap of faith!!!<br>
+               Let's put the power of this unique blend of skills<br>
+               and diverse life experiences to work for YOU!
+           </div>   
 	        </div> 
-        </div> 
-    
+          </div>  
+        
+     <!--Arrows for slideshow navigation-->
+     <div class="in-line-slide-nav-button">
           <button class="PreviousButton NavButtons" onclick="plusSlides(-1)">&#10094;</button>
           <button class="NextButton NavButtons" onclick="plusSlides(1)">&#10095;</button>
-  
-      
-    
-   
-        
-
-    
-        <!--Arrows for slideshow navigation-->
-        
-         
-        <!--DotBox for slideshow index marker and additional slideshow navigation -->
+    </div>
+          <!--DotBox for slideshow index marker and additional slideshow navigation -->
         <div id="dotBox" >
   	        <span class="dot" onclick="currentSlide(1)"></span> 
 		        <span class="dot" onclick="currentSlide(2)"></span> 
@@ -160,8 +172,10 @@
 		        <span class="dot" onclick="currentSlide(4)"></span> 
 		        <span class="dot" onclick="currentSlide(5)"></span> 
 		        <span class="dot" onclick="currentSlide(6)"></span> 
-      </div> 
-   
+      
+   </div> 
+   </div> 
+</div>
   <!-- We included our JS function within this file to ensure it was given precedence, this function covers the slideshow -->
   <script>
     var slideIndex = 1;
@@ -189,181 +203,168 @@
 	}
   </script>
 
-</div>
- </div>   
- </div>
-
-      <div id="About" class="Row" > 
-        
-                  
-            <h1 id="About_Header">...a little bit about myself...</h1> 
-            <p id="About_Disclaimer">Disclaimer: The following statements are supposed to be true... Then again, there is no guarantee... It could be a matter of opinion. In that case it is subjective information.,and by no means factual at all!n't that always the question? Fact or fiction,
-               true or false?  'Tis true, hard to tell. Alas,fret not...All sources are kept confidential and served chilled to preserve freshness...That being said, some of the information has been obtained by stardard and customary means and safety precautions were implemented to protect the innocent. On the other hand, some content was "donated" from here and there - somewhat sketchy sources, and therefore is most certainly purely unadultrated self promoting propaganda of the worst kind.... So, whether it be Fact or Fiction/ True or False/ Left or Right/ High or Low/ Up or Down/ Good or Bad/,...Please take the following into consideration: WARNING! The next section does NOT necessarily reflect everyone's views...It may not relect anyone's views at all!!! Therefore, the fine folks here at 
-                    CreatingTheCode.com can/will NOT BE HELD RESPONSIBLE for any strange and/or subsequent effects (ill or otherwise) that said "views" may or may NOT have on one's
-                        mood, appetite, posture, swollen feet, taste in music, or golf swing. This is the official, formal, and proper warning on record, for the record.
-                </p>
-            
-               <h5 id="PSA"> This has been a Public Service Announcement</h5>
-           </div>
-             
-      
-                
-                
-       <div id="About_Row" class="Row">
-               
-             <div id="About_Column_2" class="Column">
-                <div class="Column-Cushion"> 
-                  <div id="FilterText">   
-                    <h3 id="TheGist_Header">. . . the gist . . .</h3> 
-
-  
-    
-  <div id="TheGoods_Text"> <span id="CriticalThinking">Critical thinking</span> is a <span id="Skill">skill</span>, an <span id="ArtForm">art form</span>, and the <span id="Foundation">foundation of great code</span>. 
-    Code can resemble a<span id="Polished"> polished diamond</span>, a rare and <span id="Masterpiece">brilliant masterpiece</span>, the <span id="Doodle">simplest of doodles</span>, or anything in between.That's the beauty of it! 
-
-<span id="CodeIs"><br><br>Code is a creation brought to life by the artist... <br>the computer programmer.<br><br></span> The<span id="Adventures"> adventures</span>, the<span id="Discoveries"> discoveries</span> , the
-<span id="Trials">trials and tribulations</span>, the <span id="Obstacles"> obstacles to overcome</span>  , and the <span id="Hunt" >never-ending hunt for buried 
-treasure</span> means there's never a dull moment. I wake up excited to discover what <span id="Twists">twists and turns </span>   await as I prepare to <span id="Welcome">welcome
- the challenges </span> each new day brings...
-<span id="Interruption"><br><br>Please excuse this brief interruption...<br><br>
-And now a word from our sponsor...The Almost Famous Co.<br><br>
-...Enjoy these words of wisdom taken from the Almost Famous Co. family photo albumn to share with all you fine folks visiting here today,... a timeless treasure from our family to yours! <br> <br> This has been provided by the good people at tne Almost Famous Co.:<br><br><p><q><span id="InTheLandOf"> ...'Tis true, that in the Land of Software Development, Information Technology, and Computer
-  Programming one could never be bored... For there is always something new to learn and uncharted horizons to explore!!!</span></Q> <br><br><span id="Shakespeare"> - unverified relative of William Shakespeare</span></p>
-
-<br>... and now back to the previously scheduled content.<br><br><br></span>
 
 
-<span id="Fixing">I have always enjoyed fixing things that are broken, finding solutions to problems, helping others, 
-  and making people smile.</span>
- My goal is to continue to accomplish these things with the help of the code I create and my work as a software engineer.<br><br>
+<div class="container">
 
-My name is LaurieSue Peterson.
-
-As a <span id="FullStack">Full-Stack Developer</span> trained at <span id="TechAcademy"><a href="https://www.learncodinganywhere.com/" target="_blank">The
-                    Tech
-                    Academy Software Engineering Boot Camp</a></span> , I am experienced in the following programming languages and
-                     software developement tools:<span id="Tools"> C#, JavaScript, HTML, CSS, SQL, .NET, OOP, MVC, Databases, and more.</span>
-
-I'm ready to take on new challenges and would love to talk with you about how I can be part of the solution on your next project.</p>
-</div>   
- </div>  
-   
-              </div>
-              </div>  
+ <!--<div id="About" class="About_Row"> -->
               
-        <div id="About_Column_1" class="Column">
-           <div class="Column-Cushion">
+           <div class="item-1">
+              <h1 id="About_Header">. . . a little bit about myself . . .</h1> 
+            
+              <div id="About_Disclaimer">Disclaimer: The following statements are supposed to be true... Then again, there is no guarantee... It could be a matter of opinion. In that case it is subjective information.,and by no means factual at all!n't that always the question? Fact or fiction,
+               true or false?  'Tis true, hard to tell. Alas,fret not...All sources are kept confidential and served chilled to preserve freshness...That being said, some of the information has been obtained by stardard and customary means and safety precautions were implemented to protect the innocent. On the other hand, some content was "donated" from here and there - somewhat sketchy sources, and therefore is most certainly purely unadultrated self promoting propaganda of the worst kind.... So, whether it be Fact or Fiction/ True or False/ Left or Right/ High or Low/ Up or Down/ Good or Bad/,...Please take the following into consideration: WARNING! The next section does NOT necessarily reflect everyone's views...It may not relect anyone's views at all!!! Therefore, the fine folks here at 
+                    CreatingTheCode.com can/will NOT BE HELD RESPONSIBLE for any strange and/or subsequent effect (ill or otherwise) that said "views" may or may NOT have on one's
+                        mood, appetite, posture, swollen feet, taste in music, or golf swing. This is the official, formal, and proper warning on record, for the record.
+              </div>
+            
+              <div id="PSA">
+                <h5> This has been a Public Service Announcement</h5>
+              </div>
+             
+           </div>
+              
+                
+       <div class="item-2 Column_1 Gist_Text" >
+     
+               
+                  <h2  id="TheGist_Header">. . . the gist . . .</h2> 
+
+            <!-- <div id="TheGist_Text"> -->
+    <p id="Para_1"><span id="CriticalThinking" class="in-line-word show-on-scroll">Critical thinking</span> is a
+       <span id="Skill" class="in-line-word show-on-scroll" >skill</span>, an
+        <span id="ArtForm" class="in-line-word show-on-scroll">art form</span>,
+       and the <span id="Foundation" class="in-line-word show-on-scroll">foundation of great code</span>.</p> 
+
+      <p>Just like artists use different styles when expressing themselves, computer code can present itself in many ways... It can dazzle you with its sparkle and shine like a <span id="Polished" class="in-line-word show-on-scroll" > polished diamond</span>, or it can demand respect like a
+        a <span id="Masterpiece"class="in-line-word show-on-scroll" > brilliant masterpiece</span>, or show up with the innocense and charm of a child expressed through the 
+         <span id="Doodle" class="in-line-word show-on-scroll">simplest of doodles</span>...
+        Code may resemble all of the above or anything in between... That's the beauty of it! </p>
+
+<p id="Para_2"><span id="CodeIs" class="in-line-word show-on-scroll" ><br><br>Code is a creation brought to life by the artist...<br>
+  the computer programmer.<br><br></span></p>
+<p id="Para_3">The<span id="Adventures" class="in-line-word show-on-scroll"> adventures</span>, the<span id="Discoveries" class="in-line-word show-on-scroll"> discoveries</span> , the
+<span id="Trials" class="in-line-word show-on-scroll">trials and tribulations</span>, the <span id="Obstacles" class="in-line-word show-on-scroll">
+   obstacles to overcome</span>  , and the <span id="Hunt" class="in-line-word show-on-scroll"  >never-ending hunt for buried 
+treasure</span>... These are the things that lured me into the world of programming  ... and they are the reason I wake 
+up excited to tackle any problem that may arise. I can't wait to see what unexpected <span id="Twists" class="in-line-word show-on-scroll">twists and turns </span>
+ my path will take as I step up and <span id="Welcome" class="in-line-word show-on-scroll"> welcome the challenge that each new day brings...</span></p>
+<div id="commercial">
+<p id="Para_4"><span class="sponsor in-line-word show-on-scroll"><br><br>
+And now a word from our sponsor...
+<br><span class="AlmostFamous in-line-word show-on-scroll">The Almost Famous Co.</span><br></p>
+
+ <p id="Para_5"><q id="InTheLandOf" class="in-line-word show-on-scroll" > ...Tis true, that in the Land of Software Development,
+    Information Technology, and Computer Programming one could never be bored... For there is
+     always something new to learn and uncharted
+   horizons to explore!!!</q><br><br>
+<span id="Shakespeare" class="in-line-word show-on-scroll"> -relative of William Shakespeare<br></span>
+<span id="unverified" class="in-line-word show-on-scroll">(certain but unverified)</span></p><br>
+<p id="Para_6" class="sponsor in-line-word show-on-scroll">...Enjoy these words of wisdom, taken from
+<span class="AlmostFamous in-line-word show-on-scroll">The Almost Famous Co.</span> family photo albumn, as a gift to share with 
+all you fine folks visiting here today,... a timeless treasure from our family to yours!
+<br> <br> This message has been provided by the good people at
+<span class="AlmostFamous in-line-word show-on-scroll"> The Almost Famous Co.</span>:
+<br><br>"Where we believe that everyone,...everywhere is mosrt likely<spam class="AlmostFamous in-line-word show-on-scroll"> Almost Famous</spam>.
+ For one need not look too far down the ancestrial trail  
+to find evidence that someone,...somewhere, did something - be it good or bad -<span class="AlmostFamous in-line-word show-on-scroll"> That Almost Made Them Famous!</span>"<br><br>
+Our sole purpose is to make people aware of just how <span class="AlmostFamous"> Almost Famous</span> they might be, so they may rest assured and take comfort in this knowlege.
+<br><br>... and now back to our scheduled programming.<br><br></p>
+</div>
+<p id="Para_7">Trained as a <span id="FullStack" class="in-line-word show-on-scroll">Full-Stack Developer</span> at <br>
+  <span id="TechAcademy" class="in-line-word show-on-scroll" ><a href="https://www.learncodinganywhere.com/" target="_blank">The
+  Tech Academy Software Engineering Boot Camp</a></span>, <br> I gained valuable experience working with the following programming languages and
+   software developement tools:<span id="Tools" class="in-line-word show-on-scroll" > C#, JavaScript, ASP.NET, Object-Oriented Program (OOP), MVC,
+      Entity Framework, SQL, Databases, HTML, CSS, Bootstrap and more.</span>
+
+<p id="Para_8">I have always enjoyed <span id="Apart" class="in-line-word show-on-scroll" >taking things apart to see how they work</span>,<span id="Fixing" class="in-line-word show-on-scroll" > fixing things that are broken</span>, and <span id="Figuring" class="in-line-word show-on-scroll">figuring out how to make things work better</span>. I like playing detective, gathering information, finding hidden clues, deciphering secret codes, and creating my own code to solve mysteries.
+  <span id="Difficult"> I like to take difficult situations and and less than perfect circumstances and figure out how to make it an opportunity to create something positive.</span> I like to be a cheerleader and lend a helping hand to those in need. <span id="TakePride" class="in-line-word show-on-scroll">I take pride in my work.</span><br><br><span id="Better" class="in-line-word show-on-scroll">I like to make people smile. And if I can find a way to make someone's day better, maybe 
+  by helping them solve a problem, saying something funny, giving a compliment, being thoughtful and considerate, or showing appreciation - Then that is what I will do... 
+ If I can find a way to fill my days with stuff like that... Then, hey! </span><span id="Mission" class="in-line-word show-on-scroll"> Mission accomplished!</span><br><br>
+
+  <p id="Para_9">I will continue helping others and solving problems using my skills as a software engineer. <br><br>
+
+  <span id="WhatName" class="in-line-word show-on-scroll">My name is... </span> <span id="LaurieSue">LaurieSue Peterson.</span>
+<br><br><br> <br><br>
+<br><br><span id="CantWait" class="in-line-word show-on-scroll"><br>...and I can't wait to create solutions for you!</span>
+</p>
+  
+ </div>  <!--item--2 close-->         
+              
+       <!----> <div class=" Column_2">-->
+           <!-- <div class="About_Column_1"> -->
 
 
                     
-              <div id="Earth_Lightbulb_Container">
-                <div id="Earth_Lightbulb_Pic">
-                  <img  src="./lightbulb_earth.jpg" alt="lightbulb_earth" width:200; height:400;/>
-                  </div>  S
-                  <div class="Pic_Text_Wrap"> 
-                  <div id="Earth_Lightbulb_Text"><p><q>Technology, like art, is an exerccise of the human imagination</q><br>
-                  - Daniel Bell</p>
-                  </div>
+              <div id="Earth_Lightbulb_Container" class="item-3">
+                
+                  <img id="Earth" src="./lightbulb_earth.jpg" alt="lightbulb_earth"/> 
+
+                 
+                  <div id="Earth_Lightbulb_Text"><p class="EarthQuote"><q class="Quote">Technology, like art, is an exercise of the human imagination</q><br>
+                  <span id="Author">- Daniel Bell</span></p>
                   </div>
               </div>
 
-              <div class="Social_2" >
-                <div id="LinkedIn">
-                
-    
-                <p id="LinkedInPic"><a href="https://www.linkedin.com/in/lauriesue" target="blank">
-                 <img src="./LI-Logo.png" width="70%" alt="LinkedInLink"></a>
-                </p>
 
-                <p id="LinkedInLink"><a href="https://www.linkedin.com/in/lauriesue" target="blank">
+                <div id="LinkedIn" class="item-4">
+                    <a href="https://www.linkedin.com/in/lauriesue" target="blank">
+                    <img id="LinkedInPic" src="./LI-Logo.png" width="70%" alt="LinkedInLink">
+                    </a>
+                    <p id="LinkedInLink"><a href="https://www.linkedin.com/in/lauriesue" target="blank">
                      www.linkedin.com/in/lauriesue</a>
-                </p>
-                </div>
-                 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="medium" data-theme="light" data-type="VERTICAL" data-vanity="lauriesue" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/lauriesue?trk=profile-badge"></a>
-                    ></div>
-            </div>
-
-</div>  
+                    </p>
+                </div> 
               
-           </div>
-           </div>
-        
-         
-           
-           
-         <div class="Row">
-               <div class="Column_1">
-               <div class="Column">
-                  <div class="Column-Cushion">  
-             
-              
+                
 
-                </div>  
-                </div>
-                </div>
-              <div class="Column_2">
-                <div class="Column">
-                  <div class="Column-Cushion">  
-
-                <div id="AboutFaucetAlbert">
-                    <img id="FaucetHead" src="./LightbulbFaucetHead.png" alt="LightBulbFaucetHead" style="width:40vw; height:40vh;"/>
+                    <div id="AboutFaucetAlbert" class=""item-5">
+                        <img id="FaucetHead" src="./LightbulbFaucetHead.png" alt="LightBulbFaucetHead" style="width:40vw; height:40vh;"/>
                         <p id="FaucetText"><q>Logic will get you from A to B.<br>
                             Imagination will take you everywhere.</q><br>
-                  <br>- Albert Einstein</p>
-              
-                </div>
-             </div> 
-             </div>
-               </div>
-               
-</div>  
-               <div id="Social_2_Row" class="Row">
-               <div class="Column_2">
-               <div class="Column">
-                  <div class="Column-Cushion">  
-
-                 <div id="GitHub" class="Social_1">
-                       <div id="GitHubPicLink"><a href="https://github.com/pink-bee-me" target="_blank">
-                            <img id="GitHubCat" src="./GitHub.png" 
-                                  alt="GitHub Logo"></a>
+                                            <br>- Albert Einstein</p>
                     </div>
-                      
-                      <p id="GitHubLink"><a href="https://github.com/pink-bee-me"
+
+                    <div id="GitHub"class="item-6">
+                       <a href="https://github.com/pink-bee-me" target="_blank">
+                       <img id="GitHubCat" src="./GitHub.png" alt="GitHub Logo">
+                       </a>
+                       <p id="GitHubLink"><a href="https://github.com/pink-bee-me"
                               target="_blank">www.github.com/pink-bee-me</a>
                       </p>
-              
                     </div>	
-         </div>
-         </div> 
-         </div>
-                
-         <div class="Column_1">
-               
-               <div class="Column">
-                  <div class="Column-Cushion">  
 
-
-                <div id="video-container2">
+                <div id="video-container2"class="item-7">
                     <video id="Idea" autoplay loop mute>
-                        <source src="./Lightbulb_Idea.mp4">
+                        <source src="./Lightbulb.mp4">
                         Video unable to play on this browser
-                </video>
-                </div>
-                <div id="video-text_2">
-                    <h2 id="LetsTalk">Let's Talk!</h2>
-                    <h4 id="ClickMe">Click the <a id="ContactMe" href="#contactButt" onclick="buttonPink()">Contact Me</a>
+                    </video>
+              
+                    <div id="video-text_2">
+                        <h2 id="LetsTalk">Let's Talk!</h2>
+                        <h4 id="ClickMe">Click the <a id="ContactMe" href="#contactButt" onclick="buttonPink()">Contact Me</a>
                         button<br> in the lower right corner...<br>
                         It's as easy as that!</h4>
-                </div>
+                    </div>
+              </div>
 
-          </div>
-          </div>
-          </div>       <!-- Quotes-->
-  
-         </div>
-          
+<div id="ShineContainer"class="item-8">
+  <video id="Shine" autoplay loop mute>
+    <source src="./Sparkler_Left.mp4">
+    Video unable to play on this browser
+</video>
+<div id="Shine_Text">
+  <h4 id="LightOfMine">Let's Talk!</h4>
+  <h4 id="ClickMe">Click the <a id="ContactMe" href="#contactButt" onclick="buttonPink()">Contact Me</a>
+  button<br> in the lower right corner...<br>
+  It's as easy as that!</h4>
+</div>
+</div>
+
+</div>          
+
+
     <!-- Contact section -->
-    
     <div id="Contact">
         <div class="form-popup" id="myForm"> 
             <form action="https://formspree.io/info@learncodinganywhere.com" method="POST" class="form-container">
@@ -385,22 +386,32 @@ I'm ready to take on new challenges and would love to talk with you about how I 
         </div>
     </div>
     
-<div class="Row">
-  div class="Poem_Add-On">               
-<div id="Poem">
-      <p style="font-size:x-large; text-align:center;color:white;"><q>"Here's To The Crazy Ones. The misfits. The rebels. The trouble-makers. The round pegs in the square holes. The ones who see things differently.
-        They're not fond of rules, and they have no respect for the status-quo. You can quote them, disagree with them, glorify, or vilify them.
-        About the only thing you can't do is ignore them. Because they change things. They push the human race forward. And while some may see them as the crazy ones, we see genius.
-        Because the people who are crazy enough to think they can change the world - are the ones who do!"
-</q>
-       -Steve Jobs
+<<!--div class="Row">-->
+ <div class="Poem_Background"class="item-9">    
+    <video id="Sparkler_Hands" autoplay muted loop>
+      <source src="Sparkler_Hands.mp4" type="video/mp4"> 
+                          Your browser does not support HTML5 video.
+      </video>
+
+<div id="Poem" >
+      <p style="font-size:x-large; text-align:center;color:white;">
+        <p class="in-line-word show-on-scroll" id="JobsQuote" style="font-size:x-large; text-align:center;color:white;">
+        Here's To The Crazy Ones.<br>
+        The misfits. The rebels. 
+        The trouble-makers.<br> The round pegs in the square holes. The ones who see things differently.<br>
+     They're not fond of rules, and they have no respect for the status-quo. <br>You can quote them, disagree with them, glorify, or vilify them.<br>
+        About the only thing you can't do is ignore them. Because they change things.<br> They push the human race forward. And while some may see them as the crazy ones, we see genius.
+<br>Because the people who are crazy enough to think they can change the world
+- are the ones who do!<br>
+
+      <span id="Jobs"> -Steve Jobs</span>
        </p style="font-size:x-large;text-align: center;">
   </div>    
+ </div> 
   
-  
-  </div>
+  </div> <!--grid container close-->
        
-    <div class="Row" id="Goodbye">
+    <div class="Row">
     
 
         <h3 id="ThankYou">Thank You for your time... We enjoyed showing you around!<br> <span id="Until"> until we meet again, </span></h3>
@@ -430,6 +441,6 @@ I'm ready to take on new challenges and would love to talk with you about how I 
         </div>
             
     </footer>
-                  
+     <script src="./Show_on_Scroll.js"></script>             
 </body>
 </html>

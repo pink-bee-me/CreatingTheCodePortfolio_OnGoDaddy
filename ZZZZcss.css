@@ -9,6 +9,10 @@ html {
     z-index:-1;
 }
 
+*  { /* The asterisk is a universal selector that applies this effect to all elements on the page */
+    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
+}   /* Table - this section covers the styling of the columns and rows within our table */
+
 *, *:before, *:after {
     -webkit-box-sizing: inherit;
     -moz-box-sizing: inherit;
@@ -32,610 +36,579 @@ body {
     z-index:-1;
 }
 
-  /*  Navbar STARTS HERE */ 
+/* HOVERS */
+center:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+   
+h1:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+ 
+h3:hover {
+    transition: transform 2s;
+    transform: scale(1.1);
+}
+
+img:hover {
+    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition: transform ease-in 2s;
+    transform: scale(1.15); 
+}
+
+video:hover {
+    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition: transform ease-in 2s;
+    transform: scale(1.05); 
+}
+/*  Navbar STARTS HERE */ 
 
 /* Keyframes for Navbar Animations */
 /*Animation effect slides NAVBAR in from the left-side of screen on-page-load*/
 @keyframes moveNav {/*Name of the animation goes here ("movNav")*/
-    from {left: -100vw;}/* "from" means "start here"*/
-    to {left: 0vw;}/*("to" means "ends here" => can also use 100%)*/
+           from {left: -100vw;}/* "from" means "start here"*/
+           to {left: 0vw;}/*("to" means "ends here" => can also use 100%)*/
 }
    
 /*Animation effect drops NAVBAR TEXT in from top of screen on-page-load*/
 @keyframes movenavText { /* Name : movenavText */
-    from {top: -100vh;}/*Animation starts at this location on the page
+           from {top: -100vh;}/*Animation starts at this location on the page
                           (top:-100vh; is out of sight above the top of page*/
-    to {top: 0vh;} /*Animation ends here (top:0vh; is at the very top of page*/
+           to {top: 0vh;} /*Animation ends here (top:0vh; is at the very top of page*/
 }                    /* (back in sight again)*/
 
-
-
 #Navbar.navbar_wrap {
-    position:fixed;/*keeps navbar "fixed" to screen as we scroll*/
-    top:0;/*This ensures no space is displayed above the navbar*/
-    left:0;
-    width:98.7vw;/*Makes the navbar span the entire width of screen*/
-    margin:0;
-    overflow:hidden;/*Ensures content overflow is not displayed*/
-    background-color:rgb(0, 0, 0);/*This colors the navbar black*/
-    border:5px solid rgb(143, 115, 220);
-    /*(border thickness|line type(solid,dashed,etc.)|border color)*/
-    z-index:1;/*Ensures navbar sits on top layer of webpage*/
-    -moz-webkit-animation:moveNav 5s;/* Safari 4.0 - 8.0 */
-    animation:moveNav 4s;/*Animation name |set duration(seconds)*/
+        position:fixed;/*keeps navbar "fixed" to screen as we scroll*/
+        top:0;/*This ensures no space is displayed above the navbar*/
+        left:0;
+        width:98.7vw;/*Makes the navbar span the entire width of screen*/
+        margin:0;
+        overflow:hidden;/*Ensures content overflow is not displayed*/
+        background-color:rgb(0, 0, 0);/*This colors the navbar black*/
+        border:5px solid rgb(143, 115, 220);
+        /*(border thickness|line type(solid,dashed,etc.)|border color)*/
+        z-index:1;/*Ensures navbar sits on top layer of webpage*/
+        -moz-webkit-animation:moveNav 5s;/* Safari 4.0 - 8.0 */
+        animation:moveNav 4s;/*Animation name |set duration(seconds)*/
 }
 
 /* Navbar Text */
 .navbar_wrap a {
-    position:relative;/*Positioned in relation to its parent container */
-    display:block; /*Ensures text will display on the same row (instead of a new             line for each item - keeps them together as a group) */
-    float:left; /*Specifies that text floats left (lays-out --> )*/
-    padding:.75vw 1vw;/*Adds cushion around text(inside the element)*/
-    text-align:center;/*Centers text within the container*/
-    text-decoration: none;/*Removes standard anchor tag underlines*/
-    color:coral;/*font color*/
-    text-shadow:.75px .75px .75px white, /*Shawdow effect for text*/
-                1px 1px 1px cornflowerblue,
-                1.25px 1.25px 1.25px peachpuff;
-    font-family:"Josefin Sans", sans-serif;
-    font-size: 1rem;
-    font-weight:400;/* "bold-ness" scale:100-900 */
-    -mov-webkit-animation:movenavText 9.75s;/* Safari 4.0 - 8.0 */
-    animation:movenavText 9.75s;
+        position:relative;/*Positioned in relation to its parent container */
+        display:block; /*Ensures text will display on the same row (instead of a new             line for each item - keeps them together as a group) */
+        float:left; /*Specifies that text floats left (lays-out --> )*/
+        padding:.75vw 1vw;/*Adds cushion around text(inside the element)*/
+        text-align:center;/*Centers text within the container*/
+        text-decoration: none;/*Removes standard anchor tag underlines*/
+        color:coral;/*font color*/
+        text-shadow:.75px .75px .75px white, /*Shawdow effect for text*/
+                    1px 1px 1px cornflowerblue,
+                    1.25px 1.25px 1.25px peachpuff;
+        font-family:"Josefin Sans", sans-serif;
+        font-size: 1rem;
+        font-weight:400;/* "bold-ness" scale:100-900 */
+        -mov-webkit-animation:movenavText 9.75s;/* Safari 4.0 - 8.0 */
+        animation:movenavText 9.75s;
 }
 
 @keyframes navTextOnHover {
-    from{top:0vh;}
-    to{top:1vh;}
+           from{top:0vh;}
+           to{top:1vh;}
 }
  
  
 /* Navbar hover effect */
 .navbar_wrap a:hover {
-    cursor: pointer;
-    background-color:black; /*  This defines the background color that will display when you hover over the text on the navbar */
-    color:fuchsia;
-    text-shadow:.25px .25px .25px coral,
-                .5px .5px .5px coral,
-                .75px .75px .75px coral,
-                1px 1px 1px fuchsia,
-                1.25px 1.25px 1.25px fuchsia,
-                1.5px 1.5px 1.5px cornflowerblue,
-                1.75px 1.75px 1.75px cornflowerblue,
-                2px 2px 2px cornflowerblue,
-                2.25px 2.25px 2.25px cornflowerblue;/* makes the text on the navbar bold when hovered over */
-   
-    -mov-webkit-animation: navTextOnHover .45s;
-    animation: navTextOnHover .45s;
+        cursor: pointer;
+        background-color:black; /*  This defines the background color that will display when you hover over the text on the navbar */
+        color:fuchsia;
+        text-shadow:.25px .25px .25px coral,
+                    .5px .5px .5px coral,
+                    .75px .75px .75px coral,
+                    1px 1px 1px fuchsia,
+                    1.25px 1.25px 1.25px fuchsia,
+                    1.5px 1.5px 1.5px cornflowerblue,
+                    1.75px 1.75px 1.75px cornflowerblue,
+                    2px 2px 2px cornflowerblue,
+                    2.25px 2.25px 2.25px cornflowerblue;/* makes the text on the navbar bold when hovered over */
+        -mov-webkit-animation: navTextOnHover .45s;
+        animation: navTextOnHover .45s;
 }
  
  .navbar_wrap a.active:hover{
-    color:coral;
-    text-shadow:.75px .75px .75px fuchsia,
-                 1px 1px 1px fuchsia,
-                 1.25px 1.25px 1.25px fuchsia,
-                 1.5px 1.5px 1.5px cornflowerblue,
-                 1.75px 1.75px 1.75px cornflowerblue,
-                 2px 2px 2px cornflowerblue,
-                 2.25px 2.25px 2.25px cornflowerblue,
-                 2.5px 2.5px 2.5px cornflowerblue;
-    transform:scaleZ(1.1);
-    transition:ease-in 3s;
+        color:coral;
+        text-shadow:.75px .75px .75px fuchsia,
+                    1px 1px 1px fuchsia,
+                    1.25px 1.25px 1.25px fuchsia,
+                    1.5px 1.5px 1.5px cornflowerblue,
+                    1.75px 1.75px 1.75px cornflowerblue,
+                    2px 2px 2px cornflowerblue,
+                    2.25px 2.25px 2.25px cornflowerblue,
+                    2.5px 2.5px 2.5px cornflowerblue;
+        transform:scaleZ(1.1);
+        transition:ease-in 3s;
 }  
 
 /* Navbar home button */
 .navbar_wrap a.active { /* The active selector styles a link */
-    background-color:black;  /* This specifies the background color behind the Home button on the navbar */
-    color:cornflowerblue;
-    text-shadow:1.5px 1.5px 1px white;
-    font-weight:bold;
+        background-color:black;  /* This specifies the background color behind the Home button on the navbar */
+        color:cornflowerblue;
+        text-shadow:1.5px 1.5px 1px white;
+        font-weight:bold;
 }
    
-
 /* This causes the video to zoom out from a zoomed in position upon page load */
 @keyframes zoominoutsinglefeatured {
-    0% {
-        transform: scale(3,1.5);
-    }
-    100% {
-        transform: scale(1,1.5);
-    }
+        0% {
+            transform: scale(3,1.5);
+        }
+        100% {
+            transform: scale(1,1.5);
+        }
 }
 
+div#ContactButton button {
+    z-index:1;
+}
 
-div#ContactButton.button.cancel {
-    position:relative;
-    bottom:0;
-    right:0;
+div#ContactButton.button.cancel button{
+        position:relative;
+        bottom:0;
+        right:0;
+        z-index:2;
 }
 
 audio {
-    display:none;
+        display:none;
 }
 
 
 div#Home {
-    position:relative;
-    top:8vh;
-    left:0vw;
-    width: 100vw;
-    height:100vh;
-    overflow:hidden;
-    /* background-color:rgb(0,0,0); */
-    z-index:-1;
+        position:relative;
+        top:8vh;
+        left:0vw;
+        width: 100vw;
+        height:100vh;
+        overflow:hidden;
+        /* background-color:rgb(0,0,0); */
+        z-index:-1;
 }
 
 div.Poem_Add-On {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:100vw;
-    height:auto;
+        position:relative;
+        top:0vh;
+        left:0vw;
+        width:100vw;
+        height:auto;
 }
 
 
 /* Video */
 div#Home-Background-Video_Container{
-    position:relative;
-    top:-6vh;
-    left:0vw;
-    width:100vw;
-    height:100vh;
-    background-color:black;
-    z-index:-1;
+        position:relative;
+        top:-5vh;
+        left:0vw;
+        width:100vw;
+        min-height:100vh;
+        background-color:black;
+        z-index:-1;
 }
 
 video#Golden-Moon_Video {
-    position: fixed; /* This fixes our video to the page  */
-    top:2vh;/* This ensures no space between the edge of the video and the edge of the page */
-    left:15vw;    
-    width:70vw;
-    height:70vh;
-    margin:0 auto;
-    opacity:1;
-    z-index:-1;
+        position: fixed; /* This fixes our video to the page  */
+        top:5vh;/* This ensures no space between the edge of the video and the edge of the page */
+        left:15vw;    
+        width:70vw;
+        height:70vh;
+        margin:0 auto;
+        opacity:1;
+        z-index:-1;
 }
 
 
 @keyframes moveVideoText_Intro-Text_1 { /* name of animation (movevideoText)..this actually  moves the overlay text on the video */
-    from {top:225vh;} /* again we are moving from below the screen - up towards the top */
-    to {top:15vh;}
+           from {top:225vh;} /* again we are moving from below the screen - up towards the top */
+           to {top:27vh;}
 }
-
-div.Home_Text_Container {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:100vw;
-    height:100vh;
-    margin:0 auto;
-    padding:5%;
-
-}
-
 
 .Home-Video-Text_Wrap_1 {
-    position:relative;
-    top:15vh;
-    left:0vw;
-    background-color: rgba(0,0,0, .45);
-   
-    transform: color .9s ease;
-    -moz-webkit-animation: moveVideoText_Intro-Text_1 12s ;
-    animation: moveVideoText_Intro-Text_1 12s ;
-   
+        position:relative;
+        top:27vh;
+        left:0vw;
+        background-color: rgba(0,0,0, .45);
+        transform: color .9s ease;
+        -moz-webkit-animation: moveVideoText_Intro-Text_1 12s ;
+        animation: moveVideoText_Intro-Text_1 12s ;
 } 
  
 h1#Intro-Text_1{
-    position:relative;
-    top:0;
-    left:0;
-    color: slateblue;
-    text-shadow:1px 1px cornflowerblue,
-                1.10px 1.10px 1.10px  cyan,
-                1.20px 1.20px 1.20px cyan,
-                1.30px 1.30px 1.30px limegreen,
-                1.45px 1.45px 1.45px white,
-                1.55px 1.55px 1.55px white, 
-                1.65px 1.65px 1.65px white,
-                1.75px 1.75px 1.75px white, 
-                1.85px 1.85px 1.85px white,
-                1.95px 1.95px 1.95px white;
-    font-family:"Josefin Sans";
-    text-align:center;
-    font-size:5.5rem;
-    font-weight:300;
-    transition: transform ease-in-out 2s .25s;
-   
+        position:relative;
+        top:0;
+        left:0;
+        color: slateblue;
+        text-shadow:1px 1px cornflowerblue,
+                    1.10px 1.10px 1.10px  cyan,
+                    1.20px 1.20px 1.20px cyan,
+                    1.30px 1.30px 1.30px limegreen,
+                    1.45px 1.45px 1.45px white,
+                    1.55px 1.55px 1.55px white, 
+                    1.65px 1.65px 1.65px white,
+                    1.75px 1.75px 1.75px white, 
+                    1.85px 1.85px 1.85px white,
+                    1.95px 1.95px 1.95px white;
+        font-family:"Josefin Sans";
+        text-align:center;
+        font-size:5.5rem;
+        font-weight:300;
+        transition: transform ease-in-out 2s .25s;
 }   
 
 #Intro-Text_1 span {
-  font-variant:small-caps;
+        font-variant:small-caps;
 }
 
 h1#Intro-Text_1:hover { 
-    color:rgb(250, 104, 250);
-    text-shadow:1px 1px 1px fuchsia,
-                1.15px 1.15px 1.15px cyan,
-                1.25px 1px 1px cyan,
-                1.5px 1.5px 1.5px cyan,
-                1.75px 1.75px 1.75px slateblue,
-                2.0px 2.0px 2.0px slateblue,
-                2.15px 2.15px 2.15px black, 
-                2.25px 2.25px 2.25px white,
-                2.5px 2.5px 2.5px white,S
-                2.75px 2.75px 2.75px white,
-                3px 3px 3px white,
-                3.25px 3.25px 3.25px white; 
-     transform: scale(1.25);
-    
+        color:rgb(250, 104, 250);
+        text-shadow:1px 1px 1px fuchsia,
+                    1.15px 1.15px 1.15px cyan,
+                    1.25px 1px 1px cyan,
+                    1.5px 1.5px 1.5px cyan,
+                    1.75px 1.75px 1.75px slateblue,
+                    2.0px 2.0px 2.0px slateblue,
+                    2.15px 2.15px 2.15px black, 
+                    2.25px 2.25px 2.25px white,
+                    2.5px 2.5px 2.5px white,S
+                    2.75px 2.75px 2.75px white,
+                    3px 3px 3px white,
+                    3.25px 3.25px 3.25px white; 
+        transform: scale(1.25);
 } 
 
-
 @keyframes moveVideoTextFromRight_MyNameIs-Text_2 {
-    from {left:300vw;}
-    to {left:47.25vw;}
+           from {left:300vw;}
+           to {left:48.25vw;}
 }
 
-
-
-
-
 .Home-Video-Text_Wrap_2 {
-    position:relative;
-    top:26vh;
-    left:47.25vw;
-    -moz-webkit-animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
-    animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
+        position:relative;
+        top:35vh;
+        left:48.25vw;
+        -moz-webkit-animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
+        animation: moveVideoTextFromRight_MyNameIs-Text_2 9s;
 }
 
 h4#MyNameIs-Text_2 {
-    position:relative;
-    top:0;
-    left:0vw;
-    color:peachpuff;
-    text-shadow:1px 1px 1px orangered,
-                1.15px 1.15px 1.15px coral,
-                1.25px 1px 1.25px rgb(252, 89, 225),
-                1.5px 1.5px 1.5px rgb(252, 89, 225),
-                1.75px 1.75px 1.75px black,
-                2.0px 2.0px 2.0px black,
-                2.15px 2.15px 2.15px white, 
-                2.25px 2.25px 2.25px white,
-                2.5px 2.5px 2.5px white,
-                2.75px 2.75px 2.75px white,
-                3px 3px 3px white;
-    font-family:"Stalemate", cursive;
-    font-size:1.5rem;
-    font-weight: 600;
-    line-height: 1.75rem;
-    letter-spacing: .4rem;
+        position:relative;
+        top:0;
+        left:0vw;
+        color:peachpuff;
+        text-shadow:1px 1px 1px orangered,
+                    1.15px 1.15px 1.15px coral,
+                    1.25px 1px 1.25px rgb(252, 89, 225),
+                    1.5px 1.5px 1.5px rgb(252, 89, 225),
+                    1.75px 1.75px 1.75px black,
+                    2.0px 2.0px 2.0px black,
+                    2.15px 2.15px 2.15px white, 
+                    2.25px 2.25px 2.25px white,
+                    2.5px 2.5px 2.5px white,
+                    2.75px 2.75px 2.75px white,
+                    3px 3px 3px white;
+        font-family:"Stalemate", cursive;
+        font-size:1.5rem;
+        font-weight: 600;
+        line-height: 1.75rem;
+        letter-spacing: .4rem;
 }
 
 @keyframes moveVideoTextFromLeft_Name-Text_3 {
-    from {left:-255vw;}
-    to {left:30vw;} 
+           from {left:-255vw;}
+           to {left:35.25vw;} 
 }
 
-
-
 div.Home-Video-Text_Wrap_3 {
-    position:relative;
-    top:26vh;
-    left:30vw;
-    background-color: rgba(0,0,0, .45);
-    -moz-webkit-animation: moveVideoTextFromLeft_Name-Text_3 12s;
-    animation: moveVideoTextFromLeft_Name-Text_3 12s; 
+        position:relative;
+        top:33vh;
+        left:35.25vw;
+        background-color: rgba(0,0,0, .45);
+        -moz-webkit-animation: moveVideoTextFromLeft_Name-Text_3 12s;
+        animation: moveVideoTextFromLeft_Name-Text_3 12s; 
 }
 
 h2#Name-Text_3 {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    color:fuchsia;
-    text-shadow:1.05px 1.05px 1.05px cornflowerblue,
-                1.10px 1.10px 1.10px slateblue,
-                1.15px 1.15px 1.15px cyan,
-                1.25px 1.25px 1.25px slateblue,
-                1.5px 1.5px 1.5px black,
-                1.57px 1.75px 1.75px black,
-                2px 2px 2px black,
-                2.25px 2.25px 2.25px white,
-                2.5px 2.5px 2.5px coral,
-                2.6px 2.6px 2.6px peachpuff,
-                2.7px 2.7px 2.7px peachpuff,
-                2.85px 2.85px 2.85px white,
-                2.95px 2.95px 2.95px white,
-                3.15px 3.15px 3.15px white,
-                3.3px 3.3px 3.3px white;
-    font-family:"Josefin Sans", sans-serif; 
-    font-size:2.55rem;
-    font-weight:400; 
-    letter-spacing: .3rem;  
-   
+        position:relative;
+        top:0vh;
+        left:0vw;
+        color:fuchsia;
+        text-shadow:1.05px 1.05px 1.05px cornflowerblue,
+                    1.10px 1.10px 1.10px slateblue,
+                    1.15px 1.15px 1.15px cyan,
+                    1.25px 1.25px 1.25px slateblue,
+                    1.5px 1.5px 1.5px black,
+                    1.57px 1.75px 1.75px black,
+                    2px 2px 2px black,
+                    2.25px 2.25px 2.25px white,
+                    2.5px 2.5px 2.5px coral,
+                    2.6px 2.6px 2.6px peachpuff,
+                    2.7px 2.7px 2.7px peachpuff,
+                    2.85px 2.85px 2.85px white,
+                    2.95px 2.95px 2.95px white,
+                    3.15px 3.15px 3.15px white,
+                    3.3px 3.3px 3.3px white;
+        font-family:"Josefin Sans", sans-serif; 
+        font-size:2.55rem;
+        font-weight:400; 
+        letter-spacing: .3rem;  
 }
 
 @keyframes moveVideoText_IAmDev-Text_4 {
-    from {top:-135vh;}
-    to {top:27vh;}
+           from {top:-135vh;}
+           to {top:33vh;}
 }
 
 div.Home-Video-Text_Wrap_4 {
-    position:relative;
-    top:27vh;
-    left:29vw;
-    margin:0 auto;
-    background-color: rgba(0,0,0, .45);
-    -moz-webkit-animation: moveVideoText_IAmDev-Text_4 12s;
-    animation: moveVideoText_IAmDev-Text_4 12s;
+        position:relative;
+        top:33vh;
+        left:29vw;
+        margin:0 auto;
+        background-color: rgba(0,0,0, .45);
+        -moz-webkit-animation: moveVideoText_IAmDev-Text_4 12s;
+        animation: moveVideoText_IAmDev-Text_4 12s;
 }
 
 h4#IAmDev-Text_4  {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    color:peachpuff;
-    text-shadow:1px 1px 1px orangered,
-                1.15px 1.15px 1.15px coral,
-                1.25px 1px 1px fuchsia,
-                1.5px 1.5px 1.5px slateblue,
-                1.75px 1.75px 1.75px slateblue,
-                2.0px 2.0px 2.0px white,
-                2.15px 2.15px 2.15px white, 
-                2.25px 2.25px 2.25px white,
-                2.5px 2.5px 2.5px white;
-    font-family:"Stalemate", cursive;
-    font-size:1.5rem;
-    font-weight:600;
-    line-height: 1.75rem;
-    letter-spacing:.3rem;       
+        position:relative;
+        top:0vh;
+        left:0vw;
+        color:peachpuff;
+        text-shadow:1px 1px 1px orangered,
+                    1.15px 1.15px 1.15px coral,
+                    1.25px 1px 1px fuchsia,
+                    1.5px 1.5px 1.5px slateblue,
+                    1.75px 1.75px 1.75px slateblue,
+                    2.0px 2.0px 2.0px white,
+                    2.15px 2.15px 2.15px white, 
+                    2.25px 2.25px 2.25px white,
+                    2.5px 2.5px 2.5px white;
+        font-family:"Stalemate", cursive;
+        font-size:1.85rem;
+        font-weight:600;
+        line-height: 1.95rem;
+        letter-spacing:.4rem;       
 }
 
 span#Dev {  
-    color:cyan;
-    text-shadow:1px 1px 1px slateblue,
-                1.10px 1.10px 1.10px fuchsia,
-                1.20px 1.20px 1.20px white,
-                1.30px 1.30px 1.30px slateblue,
-                1.45px 1.45px 1.45px slateblue,
-                1.55px 1.55px 1.55px black,
-                1.65px 1.65px 1.65px black,
-                1.75px 1.75px 1.75px coral, 
-                1.85px 1.85px 1.85px white ,
-                1.95px 1.95px 1.95px white,
-                2.05px 2.05px 2.05px white,
-                2.15px 2.15px 2.15px white,
-                2.25px 2.25px 2.25px white,
-                2.35px 2.35px 2.35px white,
-                2.5px 2.5px 2.5px white;
-                /* 2.75px 2.75px 2.75px white,
-                3px 3px 3px white,
-                3.25px 3.25px 3.25px white,
-                3.5px 3.5px 3.5px white,
-                3.75px 3.75px 3.75px white,
-                4px 4px 4px white; */
-    font-family:"Josefin Sans", sans-serif;
-    font-size:1.5rem;
-    font-weight:300; 
-    line-height: 1.95rem;       
+        color:cyan;
+        text-shadow:1px 1px 1px slateblue,
+                    1.10px 1.10px 1.10px fuchsia,
+                    1.20px 1.20px 1.20px white,
+                    1.30px 1.30px 1.30px slateblue,
+                    1.45px 1.45px 1.45px slateblue,
+                    1.55px 1.55px 1.55px black,
+                    1.65px 1.65px 1.65px black,
+                    1.75px 1.75px 1.75px coral, 
+                    1.85px 1.85px 1.85px white ,
+                    1.95px 1.95px 1.95px white,
+                    2.05px 2.05px 2.05px white,
+                    2.15px 2.15px 2.15px white,
+                    2.25px 2.25px 2.25px white,
+                    2.35px 2.35px 2.35px white,
+                    2.5px 2.5px 2.5px white;
+                    /* 2.75px 2.75px 2.75px white,
+                    3px 3px 3px white,
+                    3.25px 3.25px 3.25px white,
+                    3.5px 3.5px 3.5px white,
+                    3.75px 3.75px 3.75px white,
+                    4px 4px 4px white; */
+        font-family:"Josefin Sans", sans-serif;
+        font-size:2rem;
+        font-weight:300; 
+        line-height: 1.95rem;       
 }
 
 
-
-div.Poem p {
-	position:relative;
-    top:90vh;
-    left:0vw;
-}
-
-/*SlideShow Style*/
-
-div.Row { 
+div#Slideshow {
     position:relative;
-    display:flex;
     top:0vh;
     left:0vw;
     width:100vw;
-    height:100vh;
+    height:auto;
 }
 
-div#Slideshow_Container  {
-    position:relative;
-    display:flex;
-    top:-5vh; 
-    left:0vw;
-    width:100vw;
-    height:100vh;
-    padding:0 25% 0 25%;
-    background-color:rgba(0,0,0,.15);
+/*SlideShow Style*/
+div.Row_Slideshow{ 
+        position:relative;
+        display:flex;
+        top:0vh;
+        left:0vw;
+        width:100vw;
+        height:100vh;
+        padding:3%;
+        margin:0;
 }
 
 .Carousel{
-    position:absolute;
-    display:flex;
-    top:-5vh;
-    left:0vh;
-    width:100%;
-    height:auto;
-    margin:auto;
-    padding:10%;
+        position:relative;
+        top:0vh;
+        left:0vh;
+        width:100%;
+        height:100vh;
+        margin:0 auto;
 }
 
+div#Slideshow_Container  {
+        position:relative;
+        top:0vh; 
+        left:0vw;
+        width:60%;
+        height:100vh;
+        margin:0 auto;;
+        background-color:rgba(0,0,0,.15);
+}
 
+.in-line-slide-nav-button{
+    position:relative;
+    display: block;
+    top:-80.28vh;
+
+}
 
 .PreviousButton{
-    position:absolute;
-    top:47vh;
-    left:23vw;
-    user-select:none;
-    transition: 0.6s ease; 
-    font-size:3rem;
-    color:cornflowerblue;
-    cursor:pointer;
-    width:5vw;
-    background-color:rgba(0,0,0,.50);
-    border:none;
+        position: absolute;
+        left:27vw;
+        user-select:none;
+        transition: 0.6s ease; 
+        font-size:3rem;
+        color:cornflowerblue;
+        cursor:pointer;
+        width:5vw;
+        background-color:rgba(0,0,0,.50);
+        border:none;
 }
 
 .NextButton{
     position:absolute;
-    float:right;
-    top:47vh;
-    left:72vw;;
-    user-select:none;
-    transition: 0.6s ease; 
-    font-size:3rem;
-    color:cornflowerblue;
-    cursor:pointer;
-    width:5vw;
-    background-color:rgba(0,0,0,.50);
-    border:none;
+      left:62vw;
+        float:right;
+        top:0vh;
+        user-select:none;
+        transition: 0.6s ease; 
+        font-size:3rem;
+        color:cornflowerblue;
+        cursor:pointer;
+        width:5vw;
+        background-color:rgba(0,0,0,.50);
+        border:none;
 }
 
 div.mySlides fade{
-    position:relative;
-    display: none;
-    top:0vh;
-    left:0vw;
-    width:50vw;
-    height:70vh;
-    /* margin:0 auto; */
-    /* padding:2%; */
-    overflow:hidden;
+        position:relative;
+        display: none;
+        top:0vh;
+        left:0vw;
+        width:100%;
+        height:auto;
+        margin:0 auto; 
+        overflow:hidden;
+        padding:2%;
 }
   
 @-webkit-keyframes fade {
-    from {opacity: .2;} 
-    to {opacity: .80;}
+        from {opacity: .2;} 
+        to {opacity: .80;}
 }
   
 @keyframes fade {
-    from {opacity: .2;} 
-    to {opacity: .80;}
+        from {opacity: .2;} 
+        to {opacity: .80;}
 }
 
 /* Fading animation for slideshow */
 div.fade { 
-    -moz-webkit-animation: fade 2s;
-    animation: fade 2s;  
+        -moz-webkit-animation: fade 2s;
+        animation: fade 2s;  
 }
-
 
 .Slideshow_Image {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:45vw;
-    height:55vh;
-    margin:0 auto;
+        position:relative;
+        top:0vh;
+        left:0vw;
+        display:flex;
 }
 
-img.Slideshow_Image {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:100%;
-    height:100%;
-    margin:0 auto;
-    object-fit: cover;
-    opacity: 85%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+div.Slideshow_Image img{
+        position:relative;
+        top:0vh;
+        left:0vw;
+        width:60%;
+        height:60%;
+        margin:0 auto;
+        object-fit: cover;
+        opacity: 85%;
+        border:8px rgb(247, 224, 205) dotted;
+        border-radius: 8px;
 }
 
 div.Slideshow_Image video {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    object-fit:fill;
-    opacity: 95%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+        position:relative;
+        top:0vh;
+        left:0vw;
+        width:60%;
+        height:60%;
+        margin:0 auto;
+        object-fit:cover;
+        opacity: 85%;
+        border:8px rgb(247, 224, 205) dotted;
+        border-radius: 8px;
 }
 
-
-
- #mePic_slide-1{
-    margin:0 auto;
-    width:80%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px; 
+#mePic_slide-1 img{
+        margin:0 auto;
+        width:400px;
+        height:450px;   
 }
 
-#htmlPic_slide-2 {
-    margin:0 auto;
-    width:80%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+#htmlPic_slide-2 img{
+        margin:0 auto;
+        width:400px;
+        height:450px;
 }
 
-#cSharpPic_slide-3 {
-    margin:0 auto;
-    width:80%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+#cSharpPic_slide-3 img{
+        margin:0 auto;
+        width:400px;
+        height:450px;
 }
 
-#sqlPic_slide-4 {
-   
-    margin:0 auto;
-    width:80%;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+#sqlPic_slide-4 img{
+        margin:0 auto;
+        width:400px;
+        height:450px;   
 }
 
-#typingVid_slide-5 {
-    position:relative;
-    top:0vh;
-    left:3.5vw;
-    margin:0 auto;
-    width:80%;
-    height:70vh;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
-    object-fit:fill;
+#typingVid_slide-5 video {
+        margin:0 auto;
+        width:400px;
+        height:450px;
 } 
 
-#Typing_Text {
-    position:relative;
-    top:2vh;
-    left:0vw;
-}
-
-.FixPic {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:50vw;
-    height:70vh;
-    margin:0 auto;
-
-}
-
-#rotaryPic_slide-6 {
-    position: absolute;
-    top:0vh;
-    left:4vw;
-    width:80%;
-    height:70vh;
-    filter:none;
-    object-fit:fill;
-    background-color:orchid;
-    border:8px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
-
-}
+#rotaryPic_slide-6 img{
+        margin:0 auto;
+        width:400px;
+        height:450px;
+} 
   
 /* Slideshow text */
 div.Slide_Text {
         position:relative;
-        top:3vh;
+        top:7vh;
         left:0vw;
         font-size:1rem;
         background-color:rgba(0, 0, 0, .50); 
         width: 100%;
         margin:0 auto;
-        padding: 2%;
+        padding:2%;
         text-align:center;
         color: white;
         background-color: rgba(0,0,0,.6);
@@ -646,239 +619,295 @@ div.Slide_Text {
         border-radius: 7px;
 }
 
-div#Rotary_Text {
-    position:relative;
-    top:72vh;
-    left:0vh;
-    margin:0 auto;
-    text-align:center;
-}
-
-
-
-#dotBox {
-    position:absolute;
-    display:block;
-    top:103vh;
-    left:44vw;
-    margin:0 auto;
-}
-
 /* The dots under the slideshow */
+#dotBox {
+       position:relative;
+        top:-15vh;
+        left:14.5vw;
+        margin:0 auto;
+}
+
 .dot {
-    position: relative;
-    display: inline-block;
-    bottom:0;
-    cursor: pointer;
-    width: 1vw;
-    height: 1vw;
-    margin: .25vw;
-    background-color: white;
-    border-radius: 50%;
-    transition: background-color 0.6s ease;
-    z-index:1;
-    user-select:none;
+        position: relative;;
+        display:inline-block;
+        bottom:25vh;
+        left:26.75vw;
+        cursor: pointer;
+        width: 1vw;
+        height: .75vw;
+        margin: .25vw;
+        background-color: white;
+        border-radius: 50%;
+        transition: background-color 0.6s ease;
+        z-index:1;
+        user-select:none;
 }
   
 /* Hover effect for slideshow dots */ 
 .active, .dot:hover {
-    background-color: fuchsia;
+        background-color: fuchsia;
+}
+
+.container {
+    display: grid;
+    gap:1.5rem;
+    grid-template-columns: 50% 50%;
+   
+  
 }
   
-*  { /* The asterisk is a universal selector that applies this effect to all elements on the page */
-    box-sizing: border-box; /* This creates a box with a border within which we will place most of our text */
-}   /* Table - this section covers the styling of the columns and rows within our table */
-  
+/*.Row  {
+        position:relative;
+        display:flex;
+        top:0vh;
+        left:0vw;
+        width:100vw;
+        background-color:rgba(0,0,0,.35);
+}
+
 .Row:after{
-    content:"";
-    display:table;
-    clear:both;
+        content:"";
+        clear:both;
+}*/
+
+
+
+
+
+  /*  .About_Row {
+        position:relative;
+        display:table;
+        top:50vh;
+        left:0vw;
+        width:100vw;
+        height:40vh;
+        border:5px solid black;
+}
+
+.About_Row:after {
+        content:"";
+        display:flex;
+        clear:both;
 }
  
-.Column_2 {
-    position:relative;
-    top:0vh;
-    height:auto;
-    color:white;
-    background-color:rgba(218, 213, 206, 0.64); 
-    border:5px solid black;  
-}
-
 .Column_1 {
-    position:relative;
-    top:0vh;
-    width:45%;
-    height:auto;
-    background-color:rgba(62, 49, 71, 0.55); 
-    border:5px solid black;
-} 
 
-.Column {
-    position:relative;
-    top:0vh;
-    width:49.5%;
-    height:auto;
-    float:left;
     flex:1;
+        /* position:relative;
+        top:0vh;
+        width:100%;
+        height:auto;
+        text-align:center;
+        background-color:rgba(218, 213, 206, 0.64); 
+        border:5px solid black;
+        flex:1; 
 }
 
-.Column-Cushion {
-    position:relative;
-    padding:5%;
+ .Column_2 {
+
+    flex:1;
+    /* position:relative;
+    top:0vh;
+    width:100%;
+    height:auto;
+    text-align:center;
+    color:ghostwhite; 
+    background-color:rgba(62, 49, 71, 0.55); 
+    border:5px solid black;  
+    flex:1; 
+}*/
+
+
+.in-line-word {
+    opacity:.25;
+    filter:grayscale(100%);
+    transition: filter 2s 1.15s ease-in-out,
+                opacity 1.5s 1s ease-out;
+    will-change: filter, opacity;
 }
+
+
+
+.in-line-word.is-visible {
+    opacity:1;
+    filter:grayscale(0%);
+}
+
+#Better {
+    color:lime;
+    text-shadow:1.10px 1.10px 1.10px lime,
+                1.15px 1.15px 1.15px lime,
+                1.20px 1.20px 1.20px  fuchsia,
+                  1.25px 1.25px 1.25px fuchsia,
+                  1.35px 1.35px 1.35px cyan,
+                  1.45px 1.45px 1.45px slateblue,
+                  1.5px 1.5px 1.5px slateblue,
+                  2.25px 2.25px 2.25px white,
+                  2.5px 2.5px 2.5px fuchsia,
+                  2.75px 2.75px 2.75px fuchsia,
+                  3px 3px 3px fuchsia,
+                  3.15px 3.15px 3.15px black,
+                  3.25px 3.25px 3.25px black,
+                  3.5px 3.5px 3.5px cyan,
+                  3.75px 3.75px 3.75px cyan,
+                  4px 4px 4px cyan,
+                  4.15px 4.15px 4.15px white,
+                  4.25px 4.25px 4.25px white,
+                  4.35px 4.35px 4.35px white,
+                  4.45px 4.45px 4.45px white,
+                  4.55px 4.55px 4.55px white;
+   font-size:2rem;
+   line-height:2.5rem;
+}
+
 
 #About{
-    position:relative;
-    top:0vh;
-    width:100vw;
-    height:auto;
-    padding:2vw;
-    margin:0;
-    color:white;
-    background-color:rgba(104,103,103,0.75);
-    
+        position:relative;
+        top:0vh;
+        width:100vw;
+        height:auto;
+        padding:2vw;
+        margin:0;
+        color:white;
+        background-color:rgba(104,103,103,0.75);
 }
 
 #About_Disclaimer {
-    position: relative;
-    top:0vh;
-    margin:0;
-    padding-left:2vw;
-    padding-right:3vw;
-    padding-bottom:2vh;
-    text-align:justify;
-    font-family:"Josefin Sans", sans-serif;
-    font-size: .75rem;
-    font-weight:200;
+        position: relative;
+        top:0vh;
+        margin:0;
+        padding-left:2vw;
+        padding-right:3vw;
+        padding-bottom:2vh;
+        text-align:justify;
+        font-family:"Josefin Sans", sans-serif;
+        font-size: .75rem;
+        font-weight:200;
 }
 
-h5#PSA {
-    text-align:center;
-    margin:0;
-    padding-bottom:5vh;
-    margin-bottom:1%;
+div#PSA h5 {
+        text-align:center;
+        margin:0;
+        padding-bottom:5vh;
+        margin-bottom:1%;
 }
-
-#FilterText {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    width:100%;
-    filter: grayscale(100%);
-    padding:1%;
-}
-
-#About_Column_2 {
-    position:relative;
-    top:0vh;
-    height:auto;
-    color:white;
-    background-color:rgba(218, 213, 206, 0.64); 
-    border:5px solid black; 
-    filter:grayscale(85%);
-}
-
-#About_Row {
-    border:5px solid black;
-}
-
-#About_Column_1 {
-    position:relative;
-    top:0vh;
-    height:autovh;
-    background-color:rgba(62, 49, 71, 0.55); 
-    border:5px solid black;
-} 
 
 #About_Header{
-    position:relative;
-    top: 0vh;
-    margin:0vw;
-    text-align:center;
-    color:white;
-    text-shadow:1.25px 1.25px 1.25px white,
-                1.5px 1.5px 1.5px white,
-                2.25px 2.25px 2.25px black,
-                2.5px 2.5px 2.5px black,
-                2.75px 2.75px 2.75px black;
-    font-family:"Stalemate", cursive;
-    font-size:4rem;
-    font-weight:300;
+        position:relative;
+        top: 0vh;
+        margin:0vw;
+        text-align:center;
+        color:white;
+        text-shadow:1.25px 1.25px 1.25px white,
+                    1.5px 1.5px 1.5px white,
+                    2.25px 2.25px 2.25px black,
+                    2.5px 2.5px 2.5px black,
+                    2.75px 2.75px 2.75px black;
+        font-family:"Stalemate", cursive;
+        font-size:5rem;
+        font-weight:300;
 }
 
-#TheGist_Header {
-    position:relative;
-    top:-2vh;
-    margin:0;
-    text-align:center;
-    color:white;
-    text-shadow:1.25px 1.25px 1.25px white,
-                1.5px 1.5px 1.5px white,
-                2.25px 2.25px 2.25px black,
-                2.5px 2.5px 2.5px black,
-                2.75px 2.75px 2.75px black,
-                3px 3px 3px black,
-                3.25px 3.25px 3.25px black,
-                3.5px 3.5px 3.5px black,
-                3.75px 3.75px 3.75px black,
-                4px 4px 4px black,
-                4.25px 4.25px 4.25px black;
-    font-family:"Stalemate", cursive;
-    font-size:3.5rem;
-    font-weight:300;
-  }
-
-#TheGoods_Text {
-    position:relative;
-    top: -3vh;
-    padding:10px;
-    text-align:justify;
-    color:White;
-    text-shadow:1.25px 1.25px 1.25px white,
-                1.5px 1.5px 1.5px black,
-                2.25px 2.25px 2.25px black,
-                2.5px 2.5px 2.5px black,
-                2.75px 2.75px 2.75px black,
-                3px 3px 3px black;
-    line-height:1.75rem;
-    font-size:1.15rem;          
+#TheGist_Header h2 {
+        position:relative;
+        top:5vh;
+        margin:0;
+        text-align:center;  
+        color:white;
+        text-shadow:1.25px 1.25px 1.25px white,
+                    1.5px 1.5px 1.5px white,
+                    2.25px 2.25px 2.25px black,
+                    2.5px 2.5px 2.5px black,
+                    2.75px 2.75px 2.75px black,
+                    3px 3px 3px black,
+                    3.25px 3.25px 3.25px black,
+                    3.5px 3.5px 3.5px black,
+                    3.75px 3.75px 3.75px black,
+                    4px 4px 4px black,
+                    4.25px 4.25px 4.25px black;
+        font-family:"Stalemate", cursive;
+        font-size: 5rem;
+        font-weight:300;
 }
 
-
-#CriticalThinking {
-    color :magenta;
-    text-shadow:1.25px 1.25px 1.25px white,
-                1.5px 1.5px 1.5px slateblue,
-                1.75px 1.75px 1.75px cyan,
-                2.25px 2.25px 2.25px turquoise,
-                2.5px 2.5px 2.5px slateblue,
-                2.75px 2.75px 2.75px fuchsia,
-                3px 3px 3px black,
-                3.15px 3.15px 3.15px white,
-                3.25px 3.25px 3.25px white,
-                3.5px 3.5px 3.5px white;
-    font-size: 2.65rem;
-    letter-spacing: .2rem;
-    line-height:2.71rem ;
+  .Gist_Text {
+        position:relative;
+        top: 2vh;
+        padding:5%;
+        text-align:justify;
+        color:White;
+        text-shadow:1.25px 1.25px 1.25px white,
+                    1.5px 1.5px 1.5px black,
+                    2.25px 2.25px 2.25px black,
+                    2.5px 2.5px 2.5px black,
+                    2.75px 2.75px 2.75px black,
+                    3px 3px 3px black;
+        line-height:1.75rem;
+        font-size:1.75rem; 
 }
 
-#Skill, #ArtForm{
-    color:rgb(218, 71, 186);
-    text-shadow:1.25px 1.25px 1.25px darkblue,
-                1.5px 1.5px 1.5px darkblue,
-                1.57px 1.75px 1.75px darkblue  ,
-                2px 2px 2px cyan,
-                2.25px 2.25px 2.25px cyan,
-                2.5px 2.5px 2.5px cyan,
-                2.75px 2.75px 2.75px white,
-                3px 3px 3px white,
-                3.15px 3.15px 3.15px black,
-                3.25px 3.25px 3.25px black,
-                3.5px 3.5px 3.5px white,
-                3.75px 3.75px 3.75px white,
-                4px 4px 4px  white;
-    font-size: 1.75rem;
-    line-height: 2em;
+span#CriticalThinking {
+        font-size: 2.65rem;
+        letter-spacing: .2rem;
+        line-height:2.71rem ;
+        color :magenta;
+        text-shadow:1.25px 1.25px 1.25px slateblue,
+                    1.5px 1.5px 1.5px white,
+                    1.75px 1.75px 1.75px turquoise,
+                    2px 2px 2px slateblue,
+                    2.25px 2.25px 2.25px cyan,
+                    2.5px 2.5px 2.5px blue,
+                    2.75px 2.75px 2.75px fuchsia,
+                    3px 3px 3px black,
+                    3.15px 3.15px 3.15px white,
+                    3.25px 3.25px 3.25px white,
+                    3.5px 3.5px 3.5px white;
+   
+}
+
+span#Skill {
+        color:blue;
+        text-shadow:1.25px 1.25px 1.25px cyan,
+                    1.5px 1.5px 1.5px darkblue,
+                    1.75px 1.75px 1.75px darkblue,
+                    2px 2px 2px cyan,
+                    2.25px 2.25px 2.25px cyan,
+                    2.5px 2.5px 2.5px cyan,
+                    2.75px 2.75px 2.75px white,
+                    3px 3px 3px white,
+                    3.15px 3.15px 3.15px black,
+                    3.25px 3.25px 3.25px black,
+                    3.5px 3.5px 3.5px white,
+                    3.75px 3.75px 3.75px white,
+                    4px 4px 4px  white;
+        font-size: 1.99rem;
+        line-height: 2em;
+     
+}
+
+span#ArtForm {
+        color:blue;
+        text-shadow:1.25px 1.25px 1.25px cyan,
+                    1.5px 1.5px 1.5px darkblue,
+                    1.75px 1.75px 1.75px darkblue,
+                    2px 2px 2px cyan,
+                    2.25px 2.25px 2.25px cyan,
+                    2.5px 2.5px 2.5px cyan,
+                    2.75px 2.75px 2.75px white,
+                    3px 3px 3px white,
+                    3.15px 3.15px 3.15px black,
+                    3.25px 3.25px 3.25px black,
+                    3.5px 3.5px 3.5px white,
+                    3.75px 3.75px 3.75px white,
+                    4px 4px 4px  white;
+        font-size: 1.99rem;
+        line-height: 2rem;
+}
+
+#Para_2 {
+    position:relative;
+    top:-7vh;
+    left:0vw;
 }
 
 #CodeIs{
@@ -893,8 +922,15 @@ h5#PSA {
     3.25px 3.25px 3.25px yellow,
     3.5px 3.5px 3.5px yellow;
 
-    font-size:2.67rem;
+    font-size:3.25rem;
     line-height:2.75rem;
+    
+}
+
+#Para_3 {
+    position:relative;
+    top: -10vh;
+    left:0vw;
 }
 
 #Fixing {
@@ -926,7 +962,8 @@ h5#PSA {
                 2.75px 2.75px 2.75px black,
                 3px 3px 3px black;
     line-height:1.25rem;
-    font-size:1.15rem;       
+    font-size:1.15rem;
+         
 
 }
 
@@ -946,45 +983,80 @@ h5#PSA {
                 3.75px 3.75px 3.75px white,
                 4px 4px 4px white,
                 4.25px 4.25px 4.25px white;
-    font-size: 1.25rem;
+    font-size: 3.5rem;
     font-weight:600;
-    line-height:1.5rem;
+    line-height:4.5rem;
+    font-family:"Stalemate";
+   
 }
 
 #Foundation {
     color:lime;
+    text-shadow:1.10px 1.10px 1.10px lime,
+                1.15px 1.15px 1.15px lime,
+                1.20px 1.20px 1.20px  fuchsia,
+                  1.25px 1.25px 1.25px fuchsia,
+                  1.35px 1.35px 1.35px cyan,
+                  1.45px 1.45px 1.45px slateblue,
+                  1.5px 1.5px 1.5px slateblue,
+                  2.25px 2.25px 2.25px white,
+                  2.5px 2.5px 2.5px fuchsia,
+                  2.75px 2.75px 2.75px fuchsia,
+                  3px 3px 3px fuchsia,
+                  3.15px 3.15px 3.15px black,
+                  3.25px 3.25px 3.25px black,
+                  3.5px 3.5px 3.5px cyan,
+                  3.75px 3.75px 3.75px cyan,
+                  4px 4px 4px cyan,
+                  4.15px 4.15px 4.15px white,
+                  4.25px 4.25px 4.25px white,
+                  4.35px 4.35px 4.35px white,
+                  4.45px 4.45px 4.45px white,
+                  4.55px 4.55px 4.55px white;
+   font-size:2rem;
+
+}
+
+#Adventures, #Trials, #Discoveries {
+    color:blueviolet;
+    text-shadow:1.25px 1.25px 1.25px blue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px lime,
+                3.75px 3.75px 3.75px lime;
+    font-size:1.75rem;
+    line-height:2rem;
+   
+}
+
+
+#Obstacles {
+    color:lime;
     text-shadow:1.25px 1.25px 1.25px lime,
-                  1.5px 1.5px 1.5px cornflowerblue,
+                1.35px 1.35px 1.35px lime,
+                  1.5px 1.5px 1.5px cyan,
                   2.25px 2.25px 2.25px cornflowerblue,
                   2.5px 2.5px 2.5px black,
                   2.75px 2.75px 2.75px fuchsia,
                   3px 3px 3px fuchsia,
                   3.15px 3.15px 3.15px white,
                   3.25px 3.25px 3.25px white,
-                  3.5px 3.5px 3.5px white,
-                  3.75px 3.75px 3.75px white;
+                  3.35px 3.35px 3.35px white,
+                  3.5px 3.5px 3.5px black,
+                  3.75px 3.75px 3.75px black;
    font-size:2rem; 
-}
-
-#Adventures, #Discoveries, #Trials, #Obstacles {
-    color:blueviolet;
-    text-shadow:1.25px 1.25px 1.25px black,
-                1.5px 1.5px 1.5px cyan,
-                2.25px 2.25px 2.25px cyan,
-                2.5px 2.5px 2.5px black,
-                2.75px 2.75px 2.75px orchid,
-                3px 3px 3px orchid,
-                3.15px 3.15px 3.15px white,
-                3.25px 3.25px 3.25px white,
-                3.5px 3.5px 3.5px white,
-                3.75px 3.75px 3.75px white;
-    font-size:1.5rem;
-    line-height:2rem;
+  
+   
 }
 
 #Hunt {
     color: magenta;
-    text-shadow:1.25px 1.25px 1.25px black,
+    text-shadow:1.25px 1.25px 1.25px magenta,
                 1.5px 1.5px 1.5px slateblue,
                 2px 2px 2px slateblue,
                 2.25px 2.25px 2.25px slateblue,
@@ -995,32 +1067,37 @@ h5#PSA {
                 3.25px 3.25px 3.25px white,
                 3.5px 3.5px 3.5px white,
                 3.75px 3.75px 3.75px white;
-    font-size:2rem;
-    line-height: 3rem;  
+    font-size:2.5rem;
+    line-height: 3rem;
+
 }
 
 #Twists {
     text-align:center;
     color:yellow;
-    text-shadow:1.25px 1.25px 1.25px cornflowerblue,
+    text-shadow:1.25px 1.25px 1.25px slateblue,
                 1.5px 1.5px 1.5px cornflowerblue,
-                2.25px 2.25px 2.25px cornflowerblue,
-                2.5px 2.5px 2.5px black,
-                2.75px 2.75px 2.75px fuchsia,
-                3px 3px 3px fuchsia,
-                3.15px 3.15px 3.15px white,
-                3.25px 3.25px 3.25px black,
-                3.5px 3.5px 3.5px black,
-                3.75px 3.75px 3.75px black;
-    font-size: 2.3rem;
-    line-height:2.37rem;
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px orange,
+                3px 3px 3px orange,
+                3.15px 3.15px 3.15px fuchsia,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px slateblue,
+                3.75px 3.75px 3.75px slateblue,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white;
+    font-size: 4rem;
+    line-height:3rem;
+  
 }
 
 #Welcome {
     text-align:center;
     color:darkslateblue;
     text-shadow:1.15px 1.15px 1.15px slateblue,
-                1.25px 1.25px 1.25px slateblue,
+                1.25px 1.25px 1.25px fuchsia,
                 1.5px 1.5px 1.5px white,
                 2.25px 2.25px 2.25px white,
                 2.5px 2.5px 2.5px fuchsia,
@@ -1029,13 +1106,24 @@ h5#PSA {
                 3.15px 3.15px 3.15px yellow,
                 3.25px 3.25px 3.25px fuchsia,
                 3.5px 3.5px 3.5px yellow,
-                3.75px 3.75px 3.75px yellow;
-    font-size: 2.53rem;
+                3.75px 3.75px 3.75px yellow,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white;
+    font-size: 2.73rem;
     line-height:2.37rem;
+  
 }
 
-#Interruption {
-    color:black;
+div#commercial {
+    position:relative;
+    top:-10vh;
+    left:0vw;
+    
+}
+
+.sponsor {
+    color:darkslateblue;
     text-shadow:1.25px 1.25px 1.25px black,
                 1.5px 1.5px 1.5px black,
                 2.25px 2.25px 2.25px fuchsia,
@@ -1048,10 +1136,51 @@ h5#PSA {
                 4px 4px 4px black,
                 4.25px 4.25px 4.25px white,
                 4.50px 4.50px 4.50px white;
-    font-size:1.15rem;
+    font-size:1.25rem;
+    position:relative;
+    top: -3vh;
+    left:0vw;
+   
 }
- 
-#InTheLandOf {
+
+#Sponsor {
+    color:darkslateblue;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px slateblue,
+                3px 3px 3px slateblue,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px cyan,
+                3.75px 3.75px 3.75px cyan,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white; 
+    font-size: 1.55rem;
+   
+}
+
+.AlmostFamous {
+    color:darkslateblue;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px slateblue,
+                3px 3px 3px slateblue,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px cyan,
+                3.75px 3.75px 3.75px cyan,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white; 
+    font-size: 1.55rem;
+   
+}
+
+
+q#InTheLandOf {
     color:lime;
     text-shadow:1.25px 1.25px 1.25px cornflowerblue,
                 1.5px 1.5px 1.5px cornflowerblue,
@@ -1065,6 +1194,52 @@ h5#PSA {
                 3.75px 3.75px 3.75px black;
     font-size:1.75rem;
     line-height:1.95rem;
+ 
+}
+
+#Shakespeare {
+    color:lime;
+    text-shadow:1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px cornflowerblue,
+                2.25px 2.25px 2.25px cornflowerblue,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px black,
+                3.75px 3.75px 3.75px black;
+    font-size:1.45rem;
+    line-height:1.45rem;
+    position:relative;
+    left:18vw;
+ 
+}
+
+#unverified {
+    color:lime;
+    text-shadow:1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px cornflowerblue,
+                2.25px 2.25px 2.25px cornflowerblue,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px black,
+                3.75px 3.75px 3.75px black;
+    font-size:1.25rem;
+    line-height:1.25rem;
+    position:relative;
+    top:0vh;
+    left:27vw;
+   
+}
+
+#Para_7 {
+    position:relative;
+    top:-15vh;
+    left:0vw;
 }
  
 #FullStack {
@@ -1080,155 +1255,355 @@ h5#PSA {
                 3.25px 3.25px 3.25px fuchsia,
                 3.5px 3.5px 3.5px yellow,
                 3.75px 3.75px 3.75px yellow;
-    font-size: 2.53rem;
-    line-height:2.95rem;
+    font-size: 3rem;
+    line-height:3.5rem;
+    
 }
 
 #TechAcademy a{
-    color:orangered;
-    text-shadow:1.25px 1.25px 1.25px fuchsia,
-                1.5px 1.5px 1.5px fuchsia,
-                2px 2px 2px orangered,
-                2.25px 2.25px 2.25px black,
+    color: magenta;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px slateblue,
+                2px 2px 2px slateblue,
+                2.25px 2.25px 2.25px slateblue,
                 2.5px 2.5px 2.5px cyan,
-                2.75px 2.75px 2.75px white,
-                3px 3px 3px white,
-                3.15px 3.15px 3.15px white,
-                3.25px 3.25px 3.25px white,
-                3.5px 3.5px 3.5px white,
-                3.75px 3.75px 3.75px white;
-    font-size: 1.85rem;
+                2.75px 2.75px 2.75px cyan,
+                3px 3px 3px black,
+                3.15px 3.15px 3.15px ,
+                3.25px 3.25px 3.25px lime,
+                3.5px 3.5px 3.5px lime,
+                3.75px 3.75px 3.75px lime;
+    font-size: 1.55rem;
     font-weight:400;
-    line-height:1.95rem;
+    line-height:2rem;
     letter-spacing: .1rem;
+    padding-bottom:1.5rem;
+   
 }
 
 #Tools {
-    color:peachpuff;
-    text-shadow:1px 1px 1px orangered,
-                1.15px 1.15px 1.15px coral,
-                1.25px 1px 1.25px rgb(252, 89, 225),
-                1.5px 1.5px 1.5px rgb(252, 89, 225),
-                1.75px 1.75px 1.75px black,
-                2.0px 2.0px 2.0px black,
-                2.15px 2.15px 2.15px white, 
-                2.25px 2.25px 2.25px white,
-                2.5px 2.5px 2.5px white,
-                2.75px 2.75px 2.75px white,
-                3px 3px 3px white,
-                3.15px 3.15px 3.15px yellow,
-                3.25px 3.25px 3.25px fuchsia,
-                3.5px 3.5px 3.5px yellow,
-                3.75px 3.75px 3.75px yellow;
-    font-size:1.5rem;
-    font-weight: 600;
-    line-height: 1.75rem;
+    color:yellow;
+    text-shadow:1.25px 1.25px 1.25px fuchsia,
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px black,
+                2.75px 2.75px 2.75px black,
+                3px 3px 3px slateblue,
+                3.15px 3.15px 3.15px slateblue,
+                3.25px 3.25px 3.25px slateblue,
+                3.5px 3.5px 3.5px slateblue,
+                3.75px 3.75px 3.75px slateblue,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white;
+    font-size: 2rem;
+    line-height:3rem;
 }
 
+github
+
+
+#Para_8 {
+    position:relative;
+    top:-13vh;
+    left:0vw;
+}
+
+#Para_9{
+    position:relative;
+    top:-13vh;
+    left:0vw; 
+    position:relative;
+    top:-17vh;
+    left:0vw;
+    text-align:center;
+    color:yellow;
+    text-shadow:1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px cornflowerblue,
+                2.25px 2.25px 2.25px fuchsia,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px orange,
+                3px 3px 3px orange,
+                3.15px 3.15px 3.15px fuchsia,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px slateblue,
+                3.75px 3.75px 3.75px slateblue,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white;
+    font-size: 2.25rem;
+    line-height:2.5rem;
+}
+
+#Mission{
+    color:blueviolet;
+    text-shadow:1.25px 1.25px 1.25px blue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px lime,
+                3.75px 3.75px 3.75px lime;
+             
+    font-size: 2.85rem;
+    line-height:4rem;
+}
+
+#WhatName {
+    position:relative;
+    top: 5vh;
+    color: magenta;
+    text-shadow:1.25px 1.25px 1.25px black,
+                1.5px 1.5px 1.5px slateblue,
+                2px 2px 2px slateblue,
+                2.25px 2.25px 2.25px slateblue,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px cyan,
+                3px 3px 3px black,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px lime,
+                3.5px 3.5px 3.5px lime,
+                3.75px 3.75px 3.75px lime,
+                4px 4px 4px cyan,
+                4.15px 4.15px 4.15px white,
+                4.25px 4.25px 4.25px white,
+                4.35px 4.35px 4.35px white,
+                4.45px 4.45px 4.45px white,
+                4.55px 4.55px 4.55px white;
+    font-size: 4rem;
+    font-weight:400;
+    line-height:5rem;
+    letter-spacing: .1rem;
+    padding-bottom:1.5rem;
+
+}
+
+#CantWait {
+    position:relative;
+    top:-17vh;
+    left:0vw;
+    color:blueviolet;
+    text-shadow:1.25px 1.25px 1.25px blue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px cyan,
+                2.5px 2.5px 2.5px cyan,
+                2.75px 2.75px 2.75px fuchsia,
+                3px 3px 3px fuchsia,
+                3.15px 3.15px 3.15px white,
+                3.25px 3.25px 3.25px white,
+                3.5px 3.5px 3.5px lime,
+                3.75px 3.75px 3.75px lime;
+    font-size:2.75rem;
+    line-height:3rem;   
+}
+
+#LaurieSue {
+    position:relative;
+    display:block;
+    top:5vh;
+    left:0vw;
+    color:darkslateblue;
+    text-shadow:1.15px 1.15px 1.15px slateblue,
+                1.25px 1.25px 1.25px slateblue,
+                1.5px 1.5px 1.5px white,
+                2.25px 2.25px 2.25px white,
+                2.5px 2.5px 2.5px fuchsia,
+                2.75px 2.75px 2.75px yellow,
+                3px 3px 3px yellow,
+                3.15px 3.15px 3.15px yellow,
+                3.25px 3.25px 3.25px fuchsia,
+                3.5px 3.5px 3.5px orange,
+                3.75px 3.75px 3.75px orange,
+                4px 4px 4px white,
+                4.25px 4.25px 4.25px white,
+                4.50px 4.50px 4.50px white; 
+    font-size: 3rem;
+    line-height:3.5rem;
+    
+}
 
 /* Right side of the About Row - About_Column_1 */
- #Earth_Lightbulb_Container{
+#Earth_Lightbulb_Container{
+    position:relative;
+    top:15vh;
+    left:0vw;
+    width:80%;
+    height:23%;
+    margin:0 auto;
+    /* border:10pt dotted rgba(218, 213, 206, 0.64); */
+    background-color:rgba(0,0,0,.65);
+    border-radius:8pt;
+    border:7px rgb(247, 224, 205) dotted;
+
+}
+
+#Earth_Lightbulb_Container img {
     position:relative;
     top:7vh;
     left:0vw;
+    width:75%;
+    height:auto;
     margin:0 auto;
     padding:2%;
-    height:auto;
     filter:grayscale(85%);
-    border:10px rgb(247, 224, 205) dotted;
- }
-
-#Earth_Lightbulb_Pic img {
-    position:relative;
-    top:0vh;
-    left:0vw;
-    margin:0 auto;
+    transition: filter 3s linear;
+    border:8pt solid rgba(218, 213, 206, 0.64);
+    border-radius:8pt;
 }
 
- .Pic_Text_Wrap {
-     position:relative;
-     top:0vh;
-     left:0vw;
-     height:auto;
-     margin:0 auto;
-    
-} 
-
- #Earth_Lightbulb_Text{
+#Earth_Lightbulb_Text {
     position:relative;
-    top:0vh;
+    top:9vh;
     left:0vw;
-    color:rgb(247, 224, 205);
-    padding:1%;
+    color:ghostwhite(218, 213, 206, 0.64);
     margin:0 auto;
+    padding-bottom:2%;
     text-align:center;
+    font-size:1.25rem;
+    background-color:rgba(0,0,0,.55);
+    border-radius:8pt;
+}
+
+.EarthQuote {
+    color:ghostwhite;
+}
+
+.Quote {
+    color:ghostwhite;
 }
 
 #Earth_Lightbulb_Container img:hover {
+    filter:grayscale(0%);  /* Brings back most of the image's color when hovered over */
+    transition:transform linear 3s;
+    transform:scale(1.05); 
+}
+
+.Pic_Text_Wrao p#Earth_lightbulb_Text:hover {
     filter:grayscale(0%);  /* Brings back most of the image's color when hovered over */
     transition:transform ease-in-out 3s;
     transform:scale(1.15); 
 }
 
-/*LinkedIn Stuff */
-
-#Social_2{
+#Author {
     position:relative;
-    top:70vh;
+    top:0vh;
+    left:21vw;
+}
+/*LinkedIn Stuff */
+#LinkedIn {
+    position:relative;
+    top:30vh;
+    left:0vw;
+    background-color:rgba(0,0,0,.45);
+    margin:0 auto;
+    width:60%;
+    height:10%;
+    border:7px rgb(247, 224, 205) dotted;
+    transition:transform 3s 1.25s ease-in-out;
+    transition:background-color 4s 1s ease-in-out;
+    }
+
+#LinkedInPic{
+    position:relative;
+    top:11vh;
+    left:0vw;
+    margin:0 auto;
 }
 
-#Social_1, #Social_2 {
-    text-align:center;
+#LinkedIn:hover { 
+    transform:scale(1.5);
+    background-color:fuchsia;
+    color:ghostwhite;
 }
 
-#LinkedIn_Link {
-    text-align:center;
-}
-
-#LinkedIn_Link a {
-    text-align:center;
-    color:rgb(220, 96, 231);
-    text-shadow:1.5px 1.5px 1.5px #4d4d4d; 
-    font-size:1.5em;
-}
-
-#LinkedIn_Pic {
+#LinkedInLink a{
     position:relative;
     top:10vh;
-    left:6vw;
+    left:5.75vw;
+    color:turquoise;
+    transition:transform 3s 1.25s ease-in ;
+    transition:background-color 4s 1s ease-in;
+
+}
+
+#LinkedInLink a:hover {
+    transform:scale(1.5);
+    background-color:fuchia;
+    color:ghostwhite;
 }
 
 
 #AboutFaucetAlbert {
     position:relative;
-    top: 7vh;
-    left:10vw;
-    width:60%;
-    filter: grayscale(75%);
-    background-color:rgb(155, 134, 150);
+    top: 47.5vh;
+    left:0vw;
+    width:80%;
+    height:15%;
+    background-color:darkslateblue;
     border:7px rgb(247, 224, 205) dotted;
-    border-radius: 8px;
+    
+    margin:0 auto;
+    transition: background-color 4s 1s ease-in;
 }
+
+
 
 #FaucetHead {
     position:relative;
-    top:0vh;
-    left:0vw;
-    padding:45px;
+    top:4vh;
+    left:-2vw;
+    width:80%;
+    height:80%;
+    margin:0 auto;
+}
+
+#FaucetHead:hover {
+
+transition:transform 3s;
+transform:scale(1.15);
 }
 
 #FaucetText{
     position:relative;
-    top:-5vh;
+    top:7vh;
     text-align:center;
-    font-size:1rem;
+    font-size:1.35rem;
 }
 
 #AboutFaucetAlbert:hover{
-    filter: grayscale(0%);
-    background-color:rgb(141, 169, 219);
-    transition:transform 2s;
-    transform:scale(1.01) ;
+    background-color:lightsalmon;
+    filter:grayscale(50%);
+   
+}
+
+#GitHub  {
+    position:relative;
+    top:65vh;
+    left:0vw;
+    width:80%;
+    height:17%;
+    border:7px rgb(247, 224, 205) dotted;
+    background-color:rgba(0,0,0,.45);
+    margin:0 auto;
+}
+
+#GitHub img {
+    position:relative;
+    top:10vh;
+    left:0vw;
+    margin:0 auto;
+    width:80%
+}
+
+#GitHubLink a {
+    position:relative;
+    top: -5vh;
+    left:6.5vw;
+    color:slateblue;
+    font-weight:bold;
+    
 }
 
 #Lets_Talk {
@@ -1252,46 +1627,45 @@ h5#PSA {
 
 #video-container2 {
     position:relative;
-    top:90vh;
-    left:1vw;
+    top:85vh;
+    left:0vw;
     width:80%;  
     margin:0 auto;
-    object-fit:fill;
     border:7px dotted rgb(247, 225, 209);
-    border-radius:8pt;
-    z-index:1;
+    background-color: rgba(0,0,0, .5);
+    
 }
 
 #video-text_2 {
     position:relative;
-    top:75vh;
-    left: 0vw;  
+    top: -2vh;
+    left: 0vw; 
+    background-color: rgba(0, 0, 0, .50); 
 }
 
 #Idea {
     position:relative;
-    top:0vh;
-    width:100%;
+    top:15vh;
+    width:90%;
     height:100%;
     margin:0 auto;
     padding:0px;
     filter:grayscale(85%);
-    background-color:black;
-    z-index:1;
+    object-fit: fill ;
 }
 
-#Click_Me {
+#ClickMe {
     position:relative;
-    top:-22vh;
+    top:-3vh;
     text-align:center;
     color:rgb(96, 140, 243);
     font-family:"Josefin Sans";
-    font-size:1.15em;
+    font-size:1.5rem;
     font-weight:600;
     z-index:1;
 }
 
-#Click_Me a {
+#ContactMe  {
     color:rgb(248, 69, 248);
     text-shadow: 1.15px 1.15px  1.15px cyan;
     font-family:"Josefin Sans";
@@ -1299,41 +1673,18 @@ h5#PSA {
     font-weight:bold;
 }
 
-#Lets_Talk{
+#LetsTalk{
     position:relative;
     width:100%;
-    top:-27vh;
+    top:-33vh;
     text-align:center;
     color:rgb(235, 57, 235);
     font-family:"Abril Fatface";
-    font-size:3.5em;
+    font-size:3.5rem;
     z-index:1;
 }
 
-#Social_1{
-    position:relative;
-    top:35vh;
-}
 
-
-
-#GitHub_Link {
-    text-align:center;
-}
-
-#GitHub_Link a{
-    text-align:center;
-    color:rgb(220, 96, 231);
-    font-size:1.5em;
-    text-shadow:1.5px 1.5px 1.5px #4d4d4d;
-    line-height:2em;
-}
-
-#GitHub_Pic {
-    position:relative;
-    top:11vh;
-    left:12vw;
-}
 
 
 /*Video Containers and Clips */
@@ -1419,6 +1770,60 @@ video-container {
    font-size:1.15rem; 
 }
 
+.Poem_Background{
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100%;
+    height:auto;
+    opacity:95%;
+}
+
+.Poem_Background video{
+    position:relative;
+    top:0vh;
+    left:0vw;
+    width:100%;
+    object-fit:fill;
+    opacity:85%;
+   
+}
+
+div#Poem{
+	position:relative;
+    top:-70vh;
+    left:0vw;
+}
+
+div#Poem:hover {
+transform:scale(1.05);
+transition:transform 3s .50s ease;
+}
+
+#JobsQuote {
+    
+	position:relative;
+    top:-55vh;
+    left:0vw;
+    line-height:5rem;
+    font-size:1.75rem;
+    padding:10%;
+    text-align: justify;
+    color:ghostwhite;
+    background-color:rgba(0,0,0,.15) ;
+font-weight:900;
+}
+
+/* #JobsQuote p {
+    padding:10%;
+} */
+
+#Jobs {
+    position:relative;
+    top:0vh;
+    left:0vw;
+}
+
 /* FOOTER SECTION*/
 footer {
     margin-top:2%;
@@ -1451,12 +1856,19 @@ footer {
     height:110vh;
 }
 
-#Goodbye #ThankYou {
+#ThankYou {
     position:relative;
-    top:53vh;
-    left:46.5vw;
+    top:-35vh;
+    left:0vw;
     color:peachpuff;
     text-shadow:1.10px 1.10px 1.10px white;
+}
+
+#GoodbyeCTC {
+    position:relative;
+    top:0vh;
+    left:0vw;
+    color:cornflowerblue;
 }
 
 #Good-bye_Footer-Text #Until_Footer-Text {
@@ -1509,10 +1921,11 @@ h2 {
 }
 
 p {
+    padding-top:2%;
     padding-left: 1.5vw;
     padding-right: 1.5vw;
     text-align: justify;
-    font-size: 1.25vw;
+    font-size: 1.5rem;
     letter-spacing: .1vw; /* This expands the text slightly */
 }
 
@@ -1540,33 +1953,7 @@ img {
     border-radius:8%;
 }
 
-/* HOVERS */
-center:hover {
-    transition: transform 2s;
-    transform: scale(1.1);
-}
-   
-h1:hover {
-    transition: transform 2s;
-    transform: scale(1.1);
-}
- 
-h3:hover {
-    transition: transform 2s;
-    transform: scale(1.1);
-}
 
-img:hover {
-    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
-    transition: transform ease-in 2s;
-    transform: scale(1.05); 
-}
-
-video:hover {
-    filter: grayscale(0%);  /* Brings back most of the image's color when hovered over */
-    transition: transform ease-in 2s;
-    transform: scale(1.05); 
-}
 
 /*FORM BUTTON AND FORM*/
   /* Makes contact form button slide in from right on page load */
@@ -1576,7 +1963,7 @@ video:hover {
 }
   
 /* Button used to open the contact form - fixed at the bottom of the page */
-.Pop_Up_Button {
+button.Pop_Up_Button {
     position: fixed;
     bottom: 1.75vw;
     right: 1.75vw;
@@ -1590,6 +1977,7 @@ video:hover {
     font-weight:900;
     -moz-webkit-animation: movePopup 5s;
     animation: movePopup 5s;
+    z-index:4
 }
   
 /*The popup form - hidden by default */
